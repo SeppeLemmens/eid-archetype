@@ -4,9 +4,36 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
 	name="eid-archetype-seam">
+	<requiredProperties>
+		<requiredProperty key="groupId">
+			<defaultValue>be.fedict.eid.example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="artifactId">
+			<defaultValue>eid-example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="version">
+			<defaultValue>1.0.0-SNAPSHOT</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="context-root">
+			<defaultValue>eid-example</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
 	<modules>
 		<module id="${rootArtifactId}-war" name="${rootArtifactId}-war"
 			dir="__rootArtifactId__-war">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.xhtml</include>
+						<include>**/*.jsp</include>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-ear" name="${rootArtifactId}-ear"
+			dir="__rootArtifactId__-ear">
 		</module>
 	</modules>
 </archetype-descriptor>
