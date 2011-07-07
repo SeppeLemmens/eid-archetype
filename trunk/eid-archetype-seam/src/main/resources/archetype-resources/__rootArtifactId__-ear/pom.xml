@@ -24,6 +24,11 @@
 							<artifactId>${rootArtifactId}-war</artifactId>
 							<contextRoot>/${context-root}</contextRoot>
 						</webModule>
+						<webModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-admin-war</artifactId>
+							<contextRoot>/${context-root}-admin</contextRoot>
+						</webModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -46,6 +51,13 @@
 			<version>${version}</version>
 			<type>war</type>
 		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-admin-war</artifactId>
+			<version>${version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- Framework dependencies -->
 		<dependency>
 			<groupId>org.jboss.seam</groupId>
 			<artifactId>jboss-seam</artifactId>
