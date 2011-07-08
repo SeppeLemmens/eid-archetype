@@ -51,6 +51,11 @@
 				<version>2.2.2.Final</version>
 			</dependency>
 			<dependency>
+				<groupId>org.jboss.seam</groupId>
+				<artifactId>jboss-seam-ui</artifactId>
+				<version>2.2.2.Final</version>
+			</dependency>
+			<dependency>
 				<groupId>org.richfaces.framework</groupId>
 				<artifactId>richfaces-api</artifactId>
 				<version>3.3.3.Final</version>
