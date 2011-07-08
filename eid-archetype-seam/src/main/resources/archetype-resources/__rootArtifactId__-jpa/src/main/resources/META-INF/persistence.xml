@@ -4,5 +4,9 @@
 	version="1.0">
 	<persistence-unit name="${persistence-unit-name}">
 		<jta-data-source>${data-source}</jta-data-source>
+
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}" />
+		</properties>
 	</persistence-unit>
 </persistence>

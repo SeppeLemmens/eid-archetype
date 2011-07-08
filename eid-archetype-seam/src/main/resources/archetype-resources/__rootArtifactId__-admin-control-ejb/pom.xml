@@ -8,7 +8,7 @@
 	<version>${version}</version>
 	<packaging>ejb</packaging>
 
-	<name>Model</name>
+	<name>Admin Control</name>
 
 	<build>
 		<plugins>
@@ -26,16 +26,26 @@
 	<dependencies>
 		<dependency>
 			<groupId>${groupId}</groupId>
-			<artifactId>${rootArtifactId}-jpa</artifactId>
+			<artifactId>${rootArtifactId}-model-ejb</artifactId>
 			<version>${version}</version>
+			<type>ejb-client</type>
 		</dependency>
 		<dependency>
 			<groupId>javax.ejb</groupId>
 			<artifactId>ejb-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.ejb3</groupId>
+			<artifactId>jboss-ejb3-ext-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>be.fedict.eid-applet</groupId>
+			<artifactId>eid-applet-service</artifactId>
 		</dependency>
 	</dependencies>
 </project>

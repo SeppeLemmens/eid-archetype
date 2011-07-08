@@ -27,11 +27,17 @@
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-model-ejb</artifactId>
 						</ejbModule>
+						<ejbModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
+						</ejbModule>
+						<!-- 
 						<webModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-war</artifactId>
 							<contextRoot>/${context-root}</contextRoot>
 						</webModule>
+						-->
 						<webModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-admin-war</artifactId>
@@ -67,10 +73,18 @@
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
+			<version>${version}</version>
+			<type>ejb</type>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-war</artifactId>
 			<version>${version}</version>
 			<type>war</type>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-admin-war</artifactId>
@@ -113,6 +127,16 @@
 		<dependency>
 			<groupId>javax.ejb</groupId>
 			<artifactId>ejb-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.ejb3</groupId>
+			<artifactId>jboss-ejb3-ext-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

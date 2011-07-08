@@ -23,6 +23,18 @@
 		<requiredProperty key="data-source">
 			<defaultValue>java:/DefaultDS</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="admin-control-jndi-pattern-prefix">
+			<defaultValue>be/fedict/eid/example/admin/portal/</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="admin-control-seam-components-prefix">
+			<defaultValue>exampleAdmin</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="jpa-named-query-prefix">
+			<defaultValue>eid.example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="table-prefix">
+			<defaultValue>example_</defaultValue>
+		</requiredProperty>
 	</requiredProperties>
 	<modules>
 		<module id="${rootArtifactId}-war" name="${rootArtifactId}-war"
@@ -34,6 +46,7 @@
 						<include>**/*.xhtml</include>
 						<include>**/*.jsp</include>
 						<include>**/*.xml</include>
+						<include>**/*.css</include>
 					</includes>
 				</fileSet>
 			</fileSets>
@@ -47,6 +60,7 @@
 						<include>**/*.xhtml</include>
 						<include>**/*.jsp</include>
 						<include>**/*.xml</include>
+						<include>**/*.css</include>
 					</includes>
 				</fileSet>
 			</fileSets>
@@ -54,6 +68,12 @@
 		<module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa"
 			dir="__rootArtifactId__-jpa">
 			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
 				<fileSet filtered="true" encoding="UTF-8">
 					<directory>src/main/resources</directory>
 					<includes>
@@ -65,10 +85,34 @@
 		<module id="${rootArtifactId}-model-ejb" name="${rootArtifactId}-model-ejb"
 			dir="__rootArtifactId__-model-ejb">
 			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
 				<fileSet filtered="true" encoding="UTF-8">
 					<directory>src/main/resources</directory>
 					<includes>
 						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-admin-control-ejb" name="${rootArtifactId}-admin-control-ejb"
+			dir="__rootArtifactId__-admin-control-ejb">
+			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.xml</include>
+						<include>**/*.properties</include>
 					</includes>
 				</fileSet>
 			</fileSets>

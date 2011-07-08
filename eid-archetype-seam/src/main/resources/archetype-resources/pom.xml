@@ -33,6 +33,11 @@
 					<artifactId>maven-ejb-plugin</artifactId>
 					<version>2.3</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -80,6 +85,31 @@
 				<artifactId>ejb-api</artifactId>
 				<version>3.0</version>
 			</dependency>
+			<dependency>
+				<groupId>be.fedict.eid-applet</groupId>
+				<artifactId>eid-applet-service</artifactId>
+				<version>1.0.3.GA</version>
+			</dependency>
+			<dependency>
+				<groupId>be.fedict.eid-applet</groupId>
+				<artifactId>eid-applet-package</artifactId>
+				<version>1.0.3.GA</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.ejb3</groupId>
+				<artifactId>jboss-ejb3-ext-api</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.4</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -104,5 +134,20 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>e-contract</id>
+			<url>https://www.e-contract.be/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
+
+	<properties>
+		<eid-applet.version>1.0.3.GA</eid-applet.version>
+		<hibernate.hbm2ddl.auto>create-drop</hibernate.hbm2ddl.auto>
+	</properties>
 </project>
