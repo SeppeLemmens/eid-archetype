@@ -23,6 +23,10 @@
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-jpa</artifactId>
 						</ejbModule>
+						<ejbModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-model-ejb</artifactId>
+						</ejbModule>
 						<webModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-war</artifactId>
@@ -52,6 +56,12 @@
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-jpa</artifactId>
+			<version>${version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-model-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
 		</dependency>
@@ -98,6 +108,11 @@
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>ejb-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
