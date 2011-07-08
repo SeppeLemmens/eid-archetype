@@ -4,7 +4,8 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:s="http://jboss.com/products/seam/taglib">
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -25,6 +26,15 @@
 	</div>
 
 	<f:view>
+		<div id="menu">
+			<rich:panelMenu>
+				<rich:panelMenuItem label="Configuration" />
+				<rich:panelMenuItem label="Privileges" />
+			</rich:panelMenu>
+		</div>
+
+		<div id="login">Login information</div>
+
 		<div id="content">
 			<ui:insert name="body">
 				<p>Default Body</p>

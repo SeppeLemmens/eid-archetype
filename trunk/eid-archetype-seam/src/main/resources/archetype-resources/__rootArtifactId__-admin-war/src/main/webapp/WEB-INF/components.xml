@@ -1,3 +1,4 @@
+#set( $symbol_pound = '#' )
 <?xml version="1.0" encoding="UTF-8"?>
 <components xmlns="http://jboss.com/products/seam/components"
 	xmlns:core="http://jboss.com/products/seam/core" xmlns:security="http://jboss.com/products/seam/security"
@@ -8,5 +9,18 @@
         http://jboss.com/products/seam/security http://jboss.com/products/seam/security-2.2.xsd
         http://jboss.com/products/seam/web http://www.jboss.com/products/seam/web-2.2.xsd
         http://jboss.com/products/seam/international http://jboss.com/products/seam/international-2.2.xsd">
+
+	<core:init jndi-pattern="${admin-control-jndi-pattern-prefix}${symbol_pound}{ejbName}"
+		debug="true" />
+
+	<web:session invalidate-on-scheme-change="true" />
+	<security:identity
+		authenticate-method="#{${admin-control-seam-components-prefix}Authenticator.authenticate}" />
+	<event type="org.jboss.seam.security.notLoggedIn">
+		<action execute="#{redirect.captureCurrentView}" />
+	</event>
+	<event type="org.jboss.seam.security.loginSuccessful">
+		<action execute="#{redirect.returnToCapturedView}" />
+	</event>
 
 </components>
