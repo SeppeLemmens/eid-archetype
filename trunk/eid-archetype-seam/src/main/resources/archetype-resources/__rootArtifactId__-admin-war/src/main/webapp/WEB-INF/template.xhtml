@@ -33,7 +33,14 @@
 			</rich:panelMenu>
 		</div>
 
-		<div id="login">Login information</div>
+		<div id="login">
+			<s:div rendered="#{identity.isLoggedIn()}">
+				<h:outputText value="#{eid.identity.firstName} #{eid.identity.name}" />
+				<br />
+				<s:link value="Logout" view="/main.xhtml"
+					action="#{identity.logout()}" />
+			</s:div>
+		</div>
 
 		<div id="content">
 			<ui:insert name="body">
