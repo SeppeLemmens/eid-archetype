@@ -19,6 +19,10 @@
 					<version>5</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
+						<ejbModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-jpa</artifactId>
+						</ejbModule>
 						<webModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-war</artifactId>
@@ -45,6 +49,12 @@
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-jpa</artifactId>
+			<version>${version}</version>
+			<type>ejb</type>
+		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-war</artifactId>
@@ -83,6 +93,11 @@
 		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>el-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
