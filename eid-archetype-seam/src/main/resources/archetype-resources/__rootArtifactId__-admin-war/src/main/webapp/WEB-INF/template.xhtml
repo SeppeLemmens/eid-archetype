@@ -34,10 +34,20 @@
 		</div>
 
 		<div id="login">
-			<s:div rendered="#{identity.isLoggedIn()}">
-				<h:outputText value="#{eid.identity.firstName} #{eid.identity.name}" />
-				<br />
-				<s:link value="Logout" view="/main.xhtml"
+			<s:div rendered="#{identity.isLoggedIn()}" id="loginPanel">
+				<h:panelGrid columns="2">
+					<s:graphicImage value="#{eid.photo}" />
+					<h:panelGroup>
+						<h:panelGrid columns="1">
+							<h:outputText value="#{eid.identity.firstName} #{eid.identity.name}" />
+							<h:outputText value="#{eid.identity.dateOfBirth.time}" >
+								<f:convertDateTime timeZone="Europe/Paris" dateStyle="default"
+												type="date" />
+							</h:outputText>
+						</h:panelGrid>
+					</h:panelGroup>
+				</h:panelGrid>
+				<s:button value="Logout" view="/main.xhtml"
 					action="#{identity.logout()}" />
 			</s:div>
 		</div>
