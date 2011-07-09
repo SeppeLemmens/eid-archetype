@@ -32,3 +32,11 @@ h2 {
 	float: right;
 	width: 25%;
 }
+
+#loginPanel {
+	background-color: #d0d0d0;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	padding: 10px;
+}
