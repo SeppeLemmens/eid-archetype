@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.model;
 
 import java.security.cert.X509Certificate;
 import java.util.List;
