@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.admin;
 
 import javax.ejb.Local;
 

@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.admin;
 
 import java.security.cert.X509Certificate;
 
