@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.model;
 
 import java.security.PublicKey;
 import java.security.cert.X509Certificate;

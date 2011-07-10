@@ -12,7 +12,7 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.security.Credentials;
 import org.jboss.seam.security.Identity;
 
-import ${package}.AdministratorManager;
+import ${package}.model.AdministratorManager;
 
 @Name("${admin-control-seam-components-prefix}Authenticator")
 @Stateless
