@@ -1,4 +1,4 @@
-package ${package};
+package ${package}.entity;
 
 public class Constants {
 

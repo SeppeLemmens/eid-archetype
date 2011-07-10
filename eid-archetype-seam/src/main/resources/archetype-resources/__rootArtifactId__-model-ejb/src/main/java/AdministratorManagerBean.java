@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import ${package}.AdministratorEntity;
+import ${package}.entity.AdministratorEntity;
 
 @Stateless
 public class AdministratorManagerBean implements AdministratorManager {

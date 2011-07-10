@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import ${package}.AdministratorEntity;
+import ${package}.entity.AdministratorEntity;
 
 @Local
 public interface AdministratorManager {
