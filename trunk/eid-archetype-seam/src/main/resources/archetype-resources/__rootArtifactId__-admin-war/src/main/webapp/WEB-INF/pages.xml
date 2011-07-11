@@ -4,23 +4,15 @@
 	no-conversation-view-id="/main.xhtml" login-view-id="/login.xhtml">
 
 	<page view-id="*">
-		<!-- 
-			Prevents javax.faces.application.ViewExpiredException because of
-			session invalidation by identity.logout() 
-		-->
+		<!-- Prevents javax.faces.application.ViewExpiredException because of session 
+			invalidation by identity.logout() -->
 		<navigation from-action="#{identity.logout()}">
 			<redirect view-id="/main.xhtml" />
 		</navigation>
 	</page>
 
-	<page view-id="/login.xhtml" scheme="https" />
-
 	<page view-id="/admin/*" login-required="true" scheme="https">
 		<restrict>#{s:hasRole('admin')}</restrict>
-	</page>
-
-	<page view-id="/postLogin.xhtml">
-		<action execute="#{identity.login}" />
 	</page>
 
 	<exception class="org.jboss.seam.security.NotLoggedInException">

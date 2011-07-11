@@ -8,7 +8,7 @@
 	<version>${version}</version>
 	<packaging>ejb</packaging>
 
-	<name>Admin Control</name>
+	<name>Control</name>
 
 	<build>
 		<plugins>
@@ -42,10 +42,6 @@
 		<dependency>
 			<groupId>org.jboss.ejb3</groupId>
 			<artifactId>jboss-ejb3-ext-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>be.fedict.eid-applet</groupId>
-			<artifactId>eid-applet-service</artifactId>
 		</dependency>
 	</dependencies>
 </project>

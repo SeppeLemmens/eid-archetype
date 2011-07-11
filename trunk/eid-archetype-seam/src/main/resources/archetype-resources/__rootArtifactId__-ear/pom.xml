@@ -31,6 +31,10 @@
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
 						</ejbModule>
+						<ejbModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-control-ejb</artifactId>
+						</ejbModule>
 						<!-- 
 						<webModule>
 							<groupId>${groupId}</groupId>
@@ -74,6 +78,12 @@
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
+			<version>${version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-control-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
 		</dependency>
