@@ -27,13 +27,16 @@ public class AuthenticatorBean implements Authenticator {
 
 	@In(value = "eid.certs.authn", scope = ScopeType.SESSION)
 	private X509Certificate authenticatedCertificate;
+	
+	@In(value = "eid.identity", scope = ScopeType.SESSION)
+	private be.fedict.eid.applet.service.Identity authenticatedIdentity;
 
 	@EJB
 	private AdministratorManager administratorManager;
 
 	public boolean authenticate() {
-		if (this.administratorManager
-				.hasAdminRights(this.authenticatedCertificate)) {
+		if (this.administratorManager.hasAdminRights(
+				this.authenticatedCertificate, this.authenticatedIdentity)) {
 			this.identity.addRole("admin");
 		}
 		return true;
