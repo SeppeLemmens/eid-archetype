@@ -29,11 +29,15 @@ public class AdministratorEntity implements Serializable {
 
 	private String name;
 
+	private String cardNumber;
+
 	private boolean pending;
 
-	public AdministratorEntity(String id, String name, boolean pending) {
+	public AdministratorEntity(String id, String name, String cardNumber,
+			boolean pending) {
 		this.id = id;
 		this.name = name;
+		this.cardNumber = cardNumber;
 		this.pending = pending;
 	}
 
@@ -57,6 +61,15 @@ public class AdministratorEntity implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Column(nullable = false)
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
 	}
 
 	public boolean isPending() {

@@ -5,12 +5,13 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import be.fedict.eid.applet.service.Identity;
 import ${package}.entity.AdministratorEntity;
 
 @Local
 public interface AdministratorManager {
 
-	boolean hasAdminRights(X509Certificate certificate);
+	boolean hasAdminRights(X509Certificate certificate, Identity identity);
 
 	List<AdministratorEntity> listAdmins();
 

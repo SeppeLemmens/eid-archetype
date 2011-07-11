@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+import be.fedict.eid.applet.service.Identity;
 import ${package}.entity.AdministratorEntity;
 
 @Stateless
@@ -18,7 +19,7 @@ public class AdministratorManagerBean implements AdministratorManager {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public boolean hasAdminRights(X509Certificate certificate) {
+	public boolean hasAdminRights(X509Certificate certificate, Identity identity) {
 		String id = getId(certificate);
 		AdministratorEntity adminEntity = this.entityManager.find(
 				AdministratorEntity.class, id);
@@ -32,19 +33,20 @@ public class AdministratorManagerBean implements AdministratorManager {
 				return false;
 			}
 		}
-		String name = certificate.getSubjectX500Principal().toString();
+		String name = identity.getFirstName() + " " + identity.getName();
+		String cardNumber = identity.getCardNumber();
 		if (AdministratorEntity.hasAdmins(this.entityManager)) {
 			/*
 			 * So we register this admin as pending.
 			 */
-			adminEntity = new AdministratorEntity(id, name, true);
+			adminEntity = new AdministratorEntity(id, name, cardNumber, true);
 			this.entityManager.persist(adminEntity);
 			return false;
 		}
 		/*
 		 * Else we bootstrap the admin.
 		 */
-		adminEntity = new AdministratorEntity(id, name, false);
+		adminEntity = new AdministratorEntity(id, name, cardNumber, false);
 		this.entityManager.persist(adminEntity);
 		return true;
 	}
