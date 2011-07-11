@@ -14,7 +14,7 @@
 <meta http-equiv="Expires" content="-1" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
-<title>Admin Portal</title>
+<title>${application-title} Admin Portal</title>
 <link rel="stylesheet" type="text/css"
 	href="#{facesContext.externalContext.requestContextPath}/style.css" />
 </head>
@@ -22,17 +22,19 @@
 <body>
 
 	<div id="header">
-		<h1>Admin Portal</h1>
+		<h1>${application-title} Admin Portal</h1>
 	</div>
 
 	<f:view>
 		<div id="menu">
-			<h:form>
-				<rich:panelMenu>
-					<rich:panelMenuItem label="Configuration" action="/admin/configuration.xhtml" />
-					<rich:panelMenuItem label="Privileges" action="/admin/privileges.xhtml" />
-				</rich:panelMenu>
-			</h:form>
+			<div id="menuPanel">
+				<h:form>
+					<rich:panelMenu>
+						<rich:panelMenuItem label="Configuration" action="/admin/configuration.xhtml" />
+						<rich:panelMenuItem label="Privileges" action="/admin/privileges.xhtml" />
+					</rich:panelMenu>
+				</h:form>
+			</div>
 		</div>
 
 		<div id="login">
