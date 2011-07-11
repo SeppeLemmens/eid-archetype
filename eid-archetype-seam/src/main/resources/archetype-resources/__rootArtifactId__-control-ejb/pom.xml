@@ -43,5 +43,13 @@
 			<groupId>org.jboss.ejb3</groupId>
 			<artifactId>jboss-ejb3-ext-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>be.fedict.eid-idp</groupId>
+			<artifactId>eid-idp-sp-protocol-saml2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.security</groupId>
+			<artifactId>jacc</artifactId>
+		</dependency>
 	</dependencies>
 </project>

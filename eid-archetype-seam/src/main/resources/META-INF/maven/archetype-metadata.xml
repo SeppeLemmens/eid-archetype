@@ -26,8 +26,14 @@
 		<requiredProperty key="admin-control-jndi-pattern-prefix">
 			<defaultValue>be/fedict/eid/example/admin/portal/</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="control-jndi-pattern-prefix">
+			<defaultValue>be/fedict/eid/example/portal/</defaultValue>
+		</requiredProperty>
 		<requiredProperty key="admin-control-seam-components-prefix">
 			<defaultValue>exampleAdmin</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="control-seam-components-prefix">
+			<defaultValue>example</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="jpa-named-query-prefix">
 			<defaultValue>eid.example</defaultValue>
@@ -43,6 +49,12 @@
 		<module id="${rootArtifactId}-war" name="${rootArtifactId}-war"
 			dir="__rootArtifactId__-war">
 			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
 				<fileSet filtered="true" encoding="UTF-8">
 					<directory>src/main/webapp</directory>
 					<includes>
@@ -115,7 +127,6 @@
 					<directory>src/main/resources</directory>
 					<includes>
 						<include>**/*.xml</include>
-						<include>**/*.properties</include>
 					</includes>
 				</fileSet>
 			</fileSets>
@@ -133,7 +144,6 @@
 					<directory>src/main/resources</directory>
 					<includes>
 						<include>**/*.xml</include>
-						<include>**/*.properties</include>
 					</includes>
 				</fileSet>
 			</fileSets>

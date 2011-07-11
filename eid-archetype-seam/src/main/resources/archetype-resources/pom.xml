@@ -115,6 +115,31 @@
 				<artifactId>servlet-api</artifactId>
 				<version>2.4</version>
 			</dependency>
+			<dependency>
+				<groupId>be.fedict.eid-idp</groupId>
+				<artifactId>eid-idp-sp-protocol-saml2</artifactId>
+				<version>1.0.0.RC4</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.security</groupId>
+				<artifactId>jacc</artifactId>
+				<version>1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.ws</groupId>
+				<artifactId>jaxws-rt</artifactId>
+				<version>2.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>2.10.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xerces</groupId>
+				<artifactId>xml-apis</artifactId>
+				<version>2.10.0</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -148,6 +173,20 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</repository>
+		<repository>
+			<id>ow2-maven-repo</id>
+			<url>http://maven.ow2.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>shibboleth</id>
+			<url>http://shibboleth.internet2.edu/downloads/maven2/</url>
 		</repository>
 	</repositories>
 
