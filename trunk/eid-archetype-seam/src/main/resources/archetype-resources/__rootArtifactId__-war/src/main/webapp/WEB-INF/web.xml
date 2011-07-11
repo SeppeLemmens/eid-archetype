@@ -86,4 +86,64 @@
         <url-pattern>*.seam</url-pattern>
     </servlet-mapping>
 
+<!-- SAML Authentication -->
+	<servlet>
+		<servlet-name>AuthenticationRequestServlet</servlet-name>
+		<servlet-class>be.fedict.eid.idp.sp.protocol.saml2.AuthenticationRequestServlet</servlet-class>
+		<init-param>
+			<param-name>AuthenticationRequestService</param-name>
+			<param-value>${control-jndi-pattern-prefix}AuthenticationRequestServiceBean</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthenticationRequestServlet</servlet-name>
+		<url-pattern>/authentication-request</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AuthenticationResponseServlet</servlet-name>
+		<servlet-class>be.fedict.eid.idp.sp.protocol.saml2.post.AuthenticationResponseServlet</servlet-class>
+		<init-param>
+			<param-name>ResponseSessionAttribute</param-name>
+			<param-value>AuthenticationResponse</param-value>
+		</init-param>
+		<init-param>
+			<param-name>RedirectPage</param-name>
+			<param-value>/authenticated</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AuthenticationResponseService</param-name>
+			<param-value>${control-jndi-pattern-prefix}AuthenticationResponseServiceBean</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ErrorPage</param-name>
+			<param-value>/auth-error.seam</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ErrorMessageSessionAttribute</param-name>
+			<param-value>AuthenticationErrorMessage</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthenticationResponseServlet</servlet-name>
+		<url-pattern>/authentication-response</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RelayStateConversationServlet</servlet-name>
+		<servlet-class>${package}.webapp.RelayStateConversationServlet</servlet-class>
+		<init-param>
+			<param-name>RedirectPage</param-name>
+			<param-value>/postLogin.seam</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ResponseSessionAttribute</param-name>
+			<param-value>AuthenticationResponse</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RelayStateConversationServlet</servlet-name>
+		<url-pattern>/authenticated</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

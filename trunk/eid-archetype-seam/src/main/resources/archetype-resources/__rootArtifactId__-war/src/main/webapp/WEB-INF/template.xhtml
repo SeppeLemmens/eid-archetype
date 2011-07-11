@@ -11,10 +11,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="expires" content="0" />
-<meta http-equiv="cache-control" content="no-cache, no-store" />
-<meta http-equiv="pragma" content="no-cache" />
-<title>Portal</title>
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<title>${application-title} Portal</title>
 <link rel="stylesheet" type="text/css"
 	href="#{facesContext.externalContext.requestContextPath}/style.css" />
 </head>
@@ -22,18 +22,32 @@
 <body>
 
 	<div id="header">
-		<h1>Portal</h1>
+		<h1>${application-title} Portal</h1>
 	</div>
 
 	<f:view>
 		<div id="menu">
-			<rich:panelMenu>
-				<rich:panelMenuItem label="Main" />
-				<rich:panelMenuItem label="My Page" />
-			</rich:panelMenu>
+			<div id="menuPanel">
+				<h:form>
+					<rich:panelMenu>
+						<rich:panelMenuItem label="My Page" action="/user/main.xhtml" />
+					</rich:panelMenu>
+				</h:form>
+			</div>
 		</div>
 
-		<div id="login">Login information</div>
+		<div id="login">
+			<s:div rendered="#{identity.isLoggedIn()}" id="loginPanel">
+				<h:panelGrid columns="2">
+					<h:panelGroup>
+						<h:panelGrid columns="1">
+							<h:outputText value="#{identity.name} #{identity.givenName}" />
+						</h:panelGrid>
+					</h:panelGroup>
+				</h:panelGrid>
+				<s:button value="Logout" action="#{identity.logout()}" />
+			</s:div>
+		</div>
 
 		<div id="content">
 			<ui:insert name="body">
