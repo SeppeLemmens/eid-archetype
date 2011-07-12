@@ -19,10 +19,10 @@
 					<version>5</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
-						<ejbModule>
+						<jarModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-jpa</artifactId>
-						</ejbModule>
+						</jarModule>
 						<ejbModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-model-ejb</artifactId>
@@ -65,13 +65,19 @@
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-jpa</artifactId>
 			<version>${version}</version>
-			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-model-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-model-ejb</artifactId>
+			<version>${version}</version>
+			<type>ejb-client</type>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
