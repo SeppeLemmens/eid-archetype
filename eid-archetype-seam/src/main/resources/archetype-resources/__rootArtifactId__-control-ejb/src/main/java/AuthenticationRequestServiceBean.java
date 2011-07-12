@@ -61,7 +61,8 @@ public class AuthenticationRequestServiceBean implements
 
 	@Override
 	public String getLanguage() {
-		return "en";
+		String language = LanguageSelectorBean.getLanguage();
+		return language;
 	}
 
 	@Override
