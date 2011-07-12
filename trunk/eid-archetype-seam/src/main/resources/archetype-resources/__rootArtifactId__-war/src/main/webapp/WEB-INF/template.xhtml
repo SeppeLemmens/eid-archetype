@@ -22,6 +22,14 @@
 <body>
 
 	<div id="header">
+		<div id="language">
+			<h:form>
+				<h:selectOneMenu
+					value="#{${control-seam-components-prefix}LanguageSelector.localeString}" onchange="submit();">
+					<f:selectItems value="#{${control-seam-components-prefix}LanguageSelector.supportedLocales}" />
+				</h:selectOneMenu>
+			</h:form>
+		</div>
 		<h1>${application-title} Portal</h1>
 	</div>
 
@@ -30,7 +38,7 @@
 			<div id="menuPanel">
 				<h:form>
 					<rich:panelMenu value="#{${control-seam-components-prefix}MenuController.selectedChild}">
-						<rich:panelMenuItem label="My Page" action="/user/main.xhtml" />
+						<rich:panelMenuItem label="#{messages['myPage']}" action="/user/main.xhtml" />
 					</rich:panelMenu>
 				</h:form>
 			</div>
@@ -45,7 +53,7 @@
 						</h:panelGrid>
 					</h:panelGroup>
 				</h:panelGrid>
-				<s:button value="Logout" action="#{identity.logout()}" />
+				<s:button value="#{messages['logout']}" action="#{identity.logout()}" />
 			</s:div>
 		</div>
 

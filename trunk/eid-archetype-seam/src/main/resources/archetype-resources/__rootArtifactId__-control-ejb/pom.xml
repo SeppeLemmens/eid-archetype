@@ -51,5 +51,9 @@
 			<groupId>javax.security</groupId>
 			<artifactId>jacc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+		</dependency>
 	</dependencies>
 </project>
