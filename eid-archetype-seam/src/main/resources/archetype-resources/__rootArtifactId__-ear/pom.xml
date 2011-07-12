@@ -129,6 +129,11 @@
 			<groupId>be.fedict.eid-idp</groupId>
 			<artifactId>eid-idp-sp-protocol-saml2</artifactId>
 		</dependency>
+		<!-- The following dependencies are not available on GlassFish 3.1 -->
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+		</dependency>
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
 		<dependency>
 			<groupId>javax.el</groupId>
