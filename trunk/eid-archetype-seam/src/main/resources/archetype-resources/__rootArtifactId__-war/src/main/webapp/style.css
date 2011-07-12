@@ -8,7 +8,7 @@ h1 {
 }
 
 h2 {
-	color: #FF9000;
+	color: ${css-color};
 	font-size: large;
 }
 
@@ -47,5 +47,5 @@ h2 {
 }
 
 .rich-pmenu-selected-element {
-	color: #FF9000;
+	color: ${css-color};
 }
