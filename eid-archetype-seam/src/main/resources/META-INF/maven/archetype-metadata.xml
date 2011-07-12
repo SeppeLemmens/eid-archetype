@@ -44,6 +44,9 @@
 		<requiredProperty key="application-title">
 			<defaultValue>Example</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="css-color">
+			<defaultValue>#FF9000</defaultValue>
+		</requiredProperty>
 	</requiredProperties>
 	<modules>
 		<module id="${rootArtifactId}-war" name="${rootArtifactId}-war"
