@@ -45,3 +45,7 @@ h2 {
 	padding: 10px;
 	margin-left: 10px;
 }
+
+.rich-pmenu-selected-element {
+	color: #FF9000;
+}

@@ -29,7 +29,7 @@
 		<div id="menu">
 			<div id="menuPanel">
 				<h:form>
-					<rich:panelMenu>
+					<rich:panelMenu value="#{${control-seam-components-prefix}MenuController.selectedChild}">
 						<rich:panelMenuItem label="My Page" action="/user/main.xhtml" />
 					</rich:panelMenu>
 				</h:form>
