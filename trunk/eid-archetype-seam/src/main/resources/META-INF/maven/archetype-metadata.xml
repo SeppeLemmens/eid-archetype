@@ -50,7 +50,7 @@
 		</requiredProperty>
 		<requiredProperty key="application-server">
 			<defaultValue>jboss6</defaultValue>
-			<!-- jboss6 or glassfish31 or jboss7 -->
+			<!-- jboss6 or glassfish31 or jboss7 or jboss51 -->
 		</requiredProperty>
 	</requiredProperties>
 	<modules>
