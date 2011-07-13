@@ -22,6 +22,7 @@
 		</requiredProperty>
 		<requiredProperty key="data-source">
 			<defaultValue>java:/DefaultDS</defaultValue>
+			<!-- for GlassFish 3.1 this is: jdbc/__default -->
 		</requiredProperty>
 		<requiredProperty key="admin-control-jndi-pattern-prefix">
 			<defaultValue>be/fedict/eid/example/admin/portal/</defaultValue>
@@ -46,6 +47,10 @@
 		</requiredProperty>
 		<requiredProperty key="css-color">
 			<defaultValue>#FF9000</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="application-server">
+			<defaultValue>jboss6</defaultValue>
+			<!-- jboss6 or glassfish31 -->
 		</requiredProperty>
 	</requiredProperties>
 	<modules>
