@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<title>${application-title} Portal</title>
+<link rel="stylesheet" type="text/css"
+	href="#{facesContext.externalContext.requestContextPath}/style.css" />
+</head>
+
+<body>
+
+	<div id="header">
+		<div id="language">
+			<h:form>
+				<h:selectOneMenu
+					value="#{${control-seam-components-prefix}LanguageSelector.localeString}" onchange="submit();">
+					<f:selectItems value="#{${control-seam-components-prefix}LanguageSelector.supportedLocales}" />
+				</h:selectOneMenu>
+			</h:form>
+		</div>
+		<h1>${application-title} Portal</h1>
+	</div>
+
+	<f:view>
+		<div id="menu">
+			<div id="menuPanel">
+				<h:form>
+					<rich:panelMenu value="#{${control-seam-components-prefix}MenuController.selectedChild}">
+						<rich:panelMenuItem label="#{messages['myPage']}" action="/user/main.xhtml" />
+					</rich:panelMenu>
+				</h:form>
+			</div>
+		</div>
+
+		<div id="login">
+			<s:div rendered="#{identity.isLoggedIn()}" id="loginPanel">
+				<h:panelGrid columns="2">
+					<h:panelGroup>
+						<h:panelGrid columns="1">
+							<h:outputText value="#{identity.name} #{identity.givenName}" />
+						</h:panelGrid>
+					</h:panelGroup>
+				</h:panelGrid>
+				<s:button value="#{messages['logout']}" action="#{identity.logout()}" />
+			</s:div>
+		</div>
+
+		<div id="content">
+			<ui:insert name="body">
+				<p>Default Body</p>
+			</ui:insert>
+		</div>
+	</f:view>
+
+</body>
+</html>
