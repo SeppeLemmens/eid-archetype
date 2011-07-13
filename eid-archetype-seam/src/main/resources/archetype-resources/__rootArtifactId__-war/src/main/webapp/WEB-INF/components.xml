@@ -14,15 +14,18 @@
 		debug="true" />
 
 	<web:session invalidate-on-scheme-change="true" />
-	<security:identity authenticate-method="#{${control-seam-components-prefix}Authenticator.authenticate}" />
+	<security:identity
+		authenticate-method="#{${control-seam-components-prefix}Authenticator.authenticate}" />
 	<event type="org.jboss.seam.security.notLoggedIn">
 		<action execute="#{redirect.captureCurrentView}" />
 	</event>
 	<event type="org.jboss.seam.security.loginSuccessful">
-		<action execute="#{${control-seam-components-prefix}Authenticator.loginSuccessfull}" />
+		<action
+			execute="#{${control-seam-components-prefix}Authenticator.loginSuccessfull}" />
 		<action execute="#{redirect.returnToCapturedView}" />
 	</event>
 
+	<web:exception-filter url-pattern="*.seam" />
 	<web:rewrite-filter view-mapping="*.seam" />
 
 	<core:resource-loader>
@@ -40,5 +43,5 @@
 	</international:locale-config>
 	<international:locale-selector
 		cookie-enabled="true" />
-		
+
 </components>

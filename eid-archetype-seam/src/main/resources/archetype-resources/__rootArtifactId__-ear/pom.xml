@@ -147,6 +147,16 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-legacy</artifactId>
 		</dependency>
+#elseif ($application-server == "jboss7")
+		<!-- The following dependencies are not available on JBoss AS 7.0.0.Final -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator-legacy</artifactId>
+		</dependency>
 #end
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
 		<dependency>

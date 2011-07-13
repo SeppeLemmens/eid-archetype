@@ -10,10 +10,10 @@
         http://jboss.com/products/seam/web http://www.jboss.com/products/seam/web-2.2.xsd
         http://jboss.com/products/seam/international http://jboss.com/products/seam/international-2.2.xsd">
 
-	<core:init jndi-pattern="${admin-control-jndi-pattern-prefix}${symbol_pound}{ejbName}"
+	<core:init
+		jndi-pattern="${admin-control-jndi-pattern-prefix}${symbol_pound}{ejbName}"
 		debug="true" />
 
-	<web:session invalidate-on-scheme-change="true" />
 	<security:identity
 		authenticate-method="#{${admin-control-seam-components-prefix}Authenticator.authenticate}" />
 	<event type="org.jboss.seam.security.notLoggedIn">
