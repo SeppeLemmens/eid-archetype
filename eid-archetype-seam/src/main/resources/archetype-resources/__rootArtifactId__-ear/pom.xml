@@ -113,10 +113,17 @@
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-api</artifactId>
 		</dependency>
+#if ($application-server == "jboss51")
+		<dependency>
+			<groupId>org.richfaces.framework</groupId>
+			<artifactId>richfaces-impl</artifactId>
+		</dependency>
+#else
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-impl-jsf2</artifactId>
 		</dependency>
+#end
 		<dependency>
 			<groupId>org.richfaces.ui</groupId>
 			<artifactId>richfaces-ui</artifactId>
@@ -157,6 +164,11 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-legacy</artifactId>
 		</dependency>
+#elseif ($application-server == "jboss51")
+		<!-- Replace in JBoss AS 5.1.0.GA the following JARs:
+			lib/endorsed/xalan.jar with version 2.7.1
+			lib/endorser/serializer.jar with version 2.7.1
+		-->
 #end
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
 		<dependency>

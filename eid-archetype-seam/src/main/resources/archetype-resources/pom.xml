@@ -66,6 +66,11 @@
 				<version>3.3.3.Final</version>
 			</dependency>
 			<dependency>
+				<groupId>org.richfaces.framework</groupId>
+				<artifactId>richfaces-impl</artifactId>
+				<version>3.3.3.Final</version>
+			</dependency>
+			<dependency>
 				<groupId>org.richfaces.ui</groupId>
 				<artifactId>richfaces-ui</artifactId>
 				<version>3.3.3.Final</version>
@@ -164,6 +169,11 @@
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator-legacy</artifactId>
 				<version>4.0.2.GA</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xalan</groupId>
+				<artifactId>xalan</artifactId>
+				<version>2.7.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
