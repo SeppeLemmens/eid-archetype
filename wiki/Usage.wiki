@@ -16,6 +16,7 @@ The following technology stack is being using:
   * Java JDK 6.0
   * Maven 3.0.3+
   * JBoss AS 6.0.0.Final
+  * Apache HTTPD Server
   * Working smart card reader
   * a Belgian eID card
 
