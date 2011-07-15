@@ -15,6 +15,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jboss.ejb3.annotation.LocalBinding;
 
+import be.fedict.eid.example.model.ConfigurationProperty;
 import be.fedict.eid.idp.common.SamlAuthenticationPolicy;
 import be.fedict.eid.idp.sp.protocol.saml2.spi.AuthenticationResponseService;
 import ${package}.model.ConfigurationProperty;
@@ -37,10 +38,10 @@ public class AuthenticationResponseServiceBean implements
 			SamlAuthenticationPolicy authenticationPolicy,
 			List<X509Certificate> certificateChain) throws SecurityException {
 		LOG.debug("validateServiceCertificate");
-		String idpFingerprint = this.configuration.getValue(
-				ConfigurationProperty.EID_IDP_FINGERPRINT);
+		String idpFingerprint = this.configuration
+				.getValue(ConfigurationProperty.EID_IDP_FINGERPRINT);
 		if (null == idpFingerprint || idpFingerprint.isEmpty()) {
-			LOG.warn("no IdP fingerprint configured");
+			LOG.warn("No eID IdP fingerprint configured. Cannot check SAML signature.");
 			return;
 		}
 		X509Certificate idpCertificate = certificateChain.get(0);
@@ -52,8 +53,19 @@ public class AuthenticationResponseServiceBean implements
 					+ e.getMessage(), e);
 		}
 		if (false == idpFingerprint.equals(actualFingerprint)) {
-			throw new SecurityException("IdP fingerprint mismatch");
+			LOG.debug("IdP fingerprint mismatch");
+			String idpRolloverFingerprint = this.configuration
+					.getValue(ConfigurationProperty.EID_IDP_ROLLOVER_FINGERPRINT);
+			if (null == idpRolloverFingerprint
+					|| idpRolloverFingerprint.isEmpty()) {
+				throw new SecurityException("IdP fingerprint mismatch");
+			}
+			LOG.debug("trying rollover IdP fingerprint");
+			if (false == idpRolloverFingerprint.equals(actualFingerprint)) {
+				throw new SecurityException("IdP fingerprint mismatch");
+			}
 		}
+
 		LOG.debug("IdP fingerprint matches");
 	}
 
