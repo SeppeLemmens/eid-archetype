@@ -8,7 +8,7 @@
 	<version>${version}</version>
 	<packaging>ear</packaging>
 
-	<name>EAR Package</name>
+	<name>${application-title} EAR Package</name>
 
 	<build>
 		<plugins>
@@ -65,12 +65,14 @@
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-jpa</artifactId>
 			<version>${version}</version>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-model-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
@@ -78,30 +80,35 @@
 			<version>${version}</version>
 			<type>ejb-client</type>
 			<scope>provided</scope>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-control-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-war</artifactId>
 			<version>${version}</version>
 			<type>war</type>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-admin-war</artifactId>
 			<version>${version}</version>
 			<type>war</type>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<!-- Framework dependencies -->
 		<dependency>
@@ -113,17 +120,17 @@
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-api</artifactId>
 		</dependency>
-#if ($application-server == "jboss51")
+		#if ($application-server == "jboss51")
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-impl</artifactId>
 		</dependency>
-#else
+		#else
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-impl-jsf2</artifactId>
 		</dependency>
-#end
+		#end
 		<dependency>
 			<groupId>org.richfaces.ui</groupId>
 			<artifactId>richfaces-ui</artifactId>
@@ -136,7 +143,7 @@
 			<groupId>be.fedict.eid-idp</groupId>
 			<artifactId>eid-idp-sp-protocol-saml2</artifactId>
 		</dependency>
-#if ($application-server == "glassfish31")
+		#if ($application-server == "glassfish31")
 		<!-- The following dependencies are not available on GlassFish 3.1 -->
 		<dependency>
 			<groupId>javassist</groupId>
@@ -154,7 +161,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-legacy</artifactId>
 		</dependency>
-#elseif ($application-server == "jboss7")
+		#elseif ($application-server == "jboss7")
 		<!-- The following dependencies are not available on JBoss AS 7.0.0.Final -->
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -164,12 +171,10 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-legacy</artifactId>
 		</dependency>
-#elseif ($application-server == "jboss51")
-		<!-- Replace in JBoss AS 5.1.0.GA the following JARs:
-			lib/endorsed/xalan.jar with version 2.7.1
-			lib/endorser/serializer.jar with version 2.7.1
-		-->
-#end
+		#elseif ($application-server == "jboss51")
+		<!-- Replace in JBoss AS 5.1.0.GA the following JARs: lib/endorsed/xalan.jar 
+			with version 2.7.1 lib/endorser/serializer.jar with version 2.7.1 -->
+		#end
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
 		<dependency>
 			<groupId>javax.el</groupId>

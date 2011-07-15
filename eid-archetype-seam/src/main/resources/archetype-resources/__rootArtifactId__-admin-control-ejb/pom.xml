@@ -8,7 +8,7 @@
 	<version>${version}</version>
 	<packaging>ejb</packaging>
 
-	<name>Admin Control</name>
+	<name>${application-title} Admin Control</name>
 
 	<build>
 		<plugins>
@@ -18,6 +18,7 @@
 				<configuration>
 					<ejbVersion>3.0</ejbVersion>
 					<generateClient>true</generateClient>
+					<classifier>${environment}</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -29,6 +30,7 @@
 			<artifactId>${rootArtifactId}-model-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb-client</type>
+			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
 			<groupId>javax.ejb</groupId>

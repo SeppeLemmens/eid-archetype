@@ -8,9 +8,18 @@
 	<version>${version}</version>
 	<packaging>jar</packaging>
 
-	<name>JPA</name>
+	<name>${application-title} JPA</name>
 
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<classifier>${environment}</classifier>
+				</configuration>
+			</plugin>
+		</plugins>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
