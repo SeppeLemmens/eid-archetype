@@ -8,7 +8,7 @@
 	<version>${version}</version>
 	<packaging>pom</packaging>
 
-	<name>An eID Seam Project</name>
+	<name>${application-title} Project</name>
 
 	<build>
 		<pluginManagement>
@@ -38,6 +38,11 @@
 					<artifactId>maven-dependency-plugin</artifactId>
 					<version>2.2</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.3.1</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -48,32 +53,32 @@
 				<groupId>org.jboss.seam</groupId>
 				<artifactId>jboss-seam</artifactId>
 				<type>ejb</type>
-				<version>2.2.2.Final</version>
+				<version>${seam.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.jboss.seam</groupId>
 				<artifactId>jboss-seam-ui</artifactId>
-				<version>2.2.2.Final</version>
+				<version>${seam.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.richfaces.framework</groupId>
 				<artifactId>richfaces-api</artifactId>
-				<version>3.3.3.Final</version>
+				<version>${richfaces.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.richfaces.framework</groupId>
 				<artifactId>richfaces-impl-jsf2</artifactId>
-				<version>3.3.3.Final</version>
+				<version>${richfaces.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.richfaces.framework</groupId>
 				<artifactId>richfaces-impl</artifactId>
-				<version>3.3.3.Final</version>
+				<version>${richfaces.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.richfaces.ui</groupId>
 				<artifactId>richfaces-ui</artifactId>
-				<version>3.3.3.Final</version>
+				<version>${richfaces.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.sun.facelets</groupId>
@@ -98,12 +103,12 @@
 			<dependency>
 				<groupId>be.fedict.eid-applet</groupId>
 				<artifactId>eid-applet-service</artifactId>
-				<version>1.0.3.GA</version>
+				<version>${eid-applet.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>be.fedict.eid-applet</groupId>
 				<artifactId>eid-applet-package</artifactId>
-				<version>1.0.3.GA</version>
+				<version>${eid-applet.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
@@ -123,7 +128,7 @@
 			<dependency>
 				<groupId>be.fedict.eid-idp</groupId>
 				<artifactId>eid-idp-sp-protocol-saml2</artifactId>
-				<version>1.0.0.RC4</version>
+				<version>${eid-idp.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>javax.security</groupId>
@@ -227,6 +232,29 @@
 
 	<properties>
 		<eid-applet.version>1.0.3.GA</eid-applet.version>
-		<hibernate.hbm2ddl.auto>create-drop</hibernate.hbm2ddl.auto>
+		<richfaces.version>3.3.3.Final</richfaces.version>
+		<seam.version>2.2.2.Final</seam.version>
+		<eid-idp.version>1.0.0.RC4</eid-idp.version>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>development</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<environment>development</environment>
+				<hibernate.hbm2ddl.auto>create-drop</hibernate.hbm2ddl.auto>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>production</id>
+			<properties>
+				<environment>production</environment>
+				<hibernate.hbm2ddl.auto>validate</hibernate.hbm2ddl.auto>
+			</properties>
+		</profile>
+	</profiles>
 </project>
