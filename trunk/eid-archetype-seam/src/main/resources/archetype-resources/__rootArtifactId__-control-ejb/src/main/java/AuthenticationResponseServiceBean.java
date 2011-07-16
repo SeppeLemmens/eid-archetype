@@ -15,7 +15,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jboss.ejb3.annotation.LocalBinding;
 
-import be.fedict.eid.example.model.ConfigurationProperty;
 import be.fedict.eid.idp.common.SamlAuthenticationPolicy;
 import be.fedict.eid.idp.sp.protocol.saml2.spi.AuthenticationResponseService;
 import ${package}.model.ConfigurationProperty;
