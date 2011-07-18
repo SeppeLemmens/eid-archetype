@@ -20,6 +20,10 @@ public interface Config {
 
 	void setIdpRolloverFingerprint(String idpRolloverFingerprint);
 
+	String getIdpIssuerName();
+	
+	void setIdpIssuerName(String idpIssuerName);
+	
 	/*
 	 * Actions.
 	 */

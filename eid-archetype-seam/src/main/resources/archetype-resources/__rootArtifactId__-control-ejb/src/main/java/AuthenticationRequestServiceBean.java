@@ -56,7 +56,9 @@ public class AuthenticationRequestServiceBean implements
 
 	@Override
 	public String getIssuer() {
-		return "TODO";
+		String idpIssuerName = this.configuration
+				.getValue(ConfigurationProperty.EID_IDP_ISSUER_NAME);
+		return idpIssuerName;
 	}
 
 	@Override
