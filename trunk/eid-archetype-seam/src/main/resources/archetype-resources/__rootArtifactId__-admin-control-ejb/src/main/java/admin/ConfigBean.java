@@ -28,6 +28,8 @@ public class ConfigBean implements Config {
 	private String idpFingerprint;
 
 	private String idpRolloverFingerprint;
+	
+	private String idpIssuerName;
 
 	@EJB
 	private Configuration configuration;
@@ -42,6 +44,8 @@ public class ConfigBean implements Config {
 				.getValue(ConfigurationProperty.EID_IDP_FINGERPRINT);
 		this.idpRolloverFingerprint = this.configuration
 				.getValue(ConfigurationProperty.EID_IDP_ROLLOVER_FINGERPRINT);
+		this.idpIssuerName = this.configuration
+				.getValue(ConfigurationProperty.EID_IDP_ISSUER_NAME);
 	}
 
 	@Override
@@ -73,6 +77,16 @@ public class ConfigBean implements Config {
 	public void setIdpRolloverFingerprint(String idpRolloverFingerprint) {
 		this.idpRolloverFingerprint = idpRolloverFingerprint;
 	}
+	
+	@Override
+	public String getIdpIssuerName() {
+		return this.idpIssuerName;
+	}
+
+	@Override
+	public void setIdpIssuerName(String idpIssuerName) {
+		this.idpIssuerName = idpIssuerName;
+	}
 
 	@Override
 	@Admin
@@ -85,6 +99,8 @@ public class ConfigBean implements Config {
 		this.configuration.setValue(
 				ConfigurationProperty.EID_IDP_ROLLOVER_FINGERPRINT,
 				this.idpRolloverFingerprint);
+		this.configuration.setValue(ConfigurationProperty.EID_IDP_ISSUER_NAME,
+				this.idpIssuerName);
 	}
 
 	@Remove
