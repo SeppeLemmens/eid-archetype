@@ -69,6 +69,11 @@
 		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-commons</artifactId>
+			<version>${version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-model-ejb</artifactId>
 			<version>${version}</version>
 			<type>ejb</type>
