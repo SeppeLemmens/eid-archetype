@@ -162,6 +162,17 @@
 				</fileSet>
 			</fileSets>
 		</module>
+		<module id="${rootArtifactId}-commons" name="${rootArtifactId}-commons"
+			dir="__rootArtifactId__-commons">
+			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
 		<module id="${rootArtifactId}-ear" name="${rootArtifactId}-ear"
 			dir="__rootArtifactId__-ear">
 		</module>
