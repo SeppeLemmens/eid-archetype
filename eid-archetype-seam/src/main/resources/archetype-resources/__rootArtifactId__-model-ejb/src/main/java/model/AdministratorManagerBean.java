@@ -35,7 +35,7 @@ public class AdministratorManagerBean implements AdministratorManager {
 		}
 		String name = identity.getFirstName() + " " + identity.getName();
 		String cardNumber = identity.getCardNumber();
-		if (AdministratorEntity.hasAdmins(this.entityManager)) {
+		if (AdministratorEntity.hasActiveAdmins(this.entityManager)) {
 			/*
 			 * So we register this admin as pending.
 			 */

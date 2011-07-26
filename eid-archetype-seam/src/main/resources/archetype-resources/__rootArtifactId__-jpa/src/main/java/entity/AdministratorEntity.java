@@ -15,13 +15,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = Constants.DATABASE_TABLE_PREFIX + "admin")
 @NamedQueries({
-		@NamedQuery(name = AdministratorEntity.COUNT_ALL, query = "SELECT COUNT(*) FROM AdministratorEntity"),
+		@NamedQuery(name = AdministratorEntity.COUNT_ALL_ACTIVE, query = "SELECT COUNT(*) FROM AdministratorEntity WHERE pending = false"),
 		@NamedQuery(name = AdministratorEntity.ALL, query = "SELECT admin FROM AdministratorEntity AS admin") })
 public class AdministratorEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String COUNT_ALL = "${jpa-named-query-prefix}.count.all";
+	public static final String COUNT_ALL_ACTIVE = "${jpa-named-query-prefix}.count.all.active";
 
 	public static final String ALL = "${jpa-named-query-prefix}.admin.all";
 
@@ -80,8 +80,8 @@ public class AdministratorEntity implements Serializable {
 		this.pending = pending;
 	}
 
-	public static boolean hasAdmins(EntityManager entityManager) {
-		Query query = entityManager.createNamedQuery(COUNT_ALL);
+	public static boolean hasActiveAdmins(EntityManager entityManager) {
+		Query query = entityManager.createNamedQuery(COUNT_ALL_ACTIVE);
 		Long count = (Long) query.getSingleResult();
 		return 0 != count;
 	}
