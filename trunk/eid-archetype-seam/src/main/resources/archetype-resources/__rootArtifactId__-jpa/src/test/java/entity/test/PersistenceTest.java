@@ -90,13 +90,13 @@ public class PersistenceTest {
 
 	@Test
 	public void testAdministratorEntityCount() throws Exception {
-		assertFalse(AdministratorEntity.hasAdmins(this.entityManager));
+		assertFalse(AdministratorEntity.hasActiveAdmins(this.entityManager));
 
 		AdministratorEntity administratorEntity = new AdministratorEntity(
 				"test-id", "test-name", "test-card-number", false);
 		this.entityManager.persist(administratorEntity);
 		commit();
 
-		assertTrue(AdministratorEntity.hasAdmins(this.entityManager));
+		assertTrue(AdministratorEntity.hasActiveAdmins(this.entityManager));
 	}
 }
