@@ -8,6 +8,9 @@
 
     <!-- JBoss Seam -->
     <listener>
+    	<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+    </listener>
+    <listener>
         <listener-class>org.jboss.seam.servlet.SeamListener</listener-class>
     </listener>
 
