@@ -38,6 +38,7 @@
 			<div id="menuPanel">
 				<h:form>
 					<rich:panelMenu value="#{${control-seam-components-prefix}MenuController.selectedChild}">
+						<rich:panelMenuItem label="#{messages['home']}" action="/main.xhtml" />
 						<rich:panelMenuItem label="#{messages['myPage']}" action="/user/main.xhtml" />
 					</rich:panelMenu>
 				</h:form>
