@@ -17,7 +17,7 @@ import ${package}.model.ConfigurationProperty;
 
 @Stateful
 @Name("${admin-control-seam-components-prefix}Config")
-@LocalBinding(jndiBinding = "${admin-control-jndi-pattern-prefix}ConfigBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "ConfigBean")
 public class ConfigBean implements Config {
 
 	@Logger

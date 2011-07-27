@@ -22,7 +22,7 @@ import ${package}.model.Configuration;
 
 @Stateless
 @Local(AuthenticationResponseService.class)
-@LocalBinding(jndiBinding = "${control-jndi-pattern-prefix}AuthenticationResponseServiceBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "AuthenticationResponseServiceBean")
 public class AuthenticationResponseServiceBean implements
 		AuthenticationResponseService {
 

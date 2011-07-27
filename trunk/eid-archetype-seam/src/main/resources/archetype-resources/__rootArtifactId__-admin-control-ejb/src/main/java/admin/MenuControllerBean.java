@@ -13,7 +13,7 @@ import org.jboss.seam.log.Log;
 
 @Stateful
 @Name("${admin-control-seam-components-prefix}MenuController")
-@LocalBinding(jndiBinding = "${admin-control-jndi-pattern-prefix}MenuControllerBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "MenuControllerBean")
 @Scope(ScopeType.SESSION)
 public class MenuControllerBean implements MenuController {
 
