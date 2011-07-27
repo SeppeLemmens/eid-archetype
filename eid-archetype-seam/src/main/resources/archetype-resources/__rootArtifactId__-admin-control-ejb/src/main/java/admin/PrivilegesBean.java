@@ -21,7 +21,7 @@ import ${package}.model.AdministratorManager;
 
 @Stateful
 @Name("${admin-control-seam-components-prefix}Admins")
-@LocalBinding(jndiBinding = "${admin-control-jndi-pattern-prefix}PrivilegesBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "PrivilegesBean")
 public class PrivilegesBean implements Privileges {
 
 	@Logger

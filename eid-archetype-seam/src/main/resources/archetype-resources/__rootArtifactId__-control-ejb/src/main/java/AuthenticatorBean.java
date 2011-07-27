@@ -18,7 +18,7 @@ import be.fedict.eid.idp.common.saml2.AuthenticationResponse;
 
 @Name("${control-seam-components-prefix}Authenticator")
 @Stateless
-@LocalBinding(jndiBinding = "${control-jndi-pattern-prefix}AuthenticatorBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "AuthenticatorBean")
 public class AuthenticatorBean implements Authenticator {
 
 	@Logger

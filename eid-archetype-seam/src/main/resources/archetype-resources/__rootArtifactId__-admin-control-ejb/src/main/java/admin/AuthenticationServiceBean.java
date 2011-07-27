@@ -16,7 +16,7 @@ import be.fedict.eid.applet.service.spi.TrustCertificateSecurityException;
 
 @Stateless
 @Local(AuthenticationService.class)
-@LocalBinding(jndiBinding = "${admin-control-jndi-pattern-prefix}AuthenticationServiceBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "AuthenticationServiceBean")
 public class AuthenticationServiceBean implements AuthenticationService {
 
 	@Override

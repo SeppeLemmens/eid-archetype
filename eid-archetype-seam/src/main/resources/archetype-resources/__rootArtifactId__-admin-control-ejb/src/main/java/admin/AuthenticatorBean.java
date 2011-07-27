@@ -16,7 +16,7 @@ import ${package}.model.AdministratorManager;
 
 @Name("${admin-control-seam-components-prefix}Authenticator")
 @Stateless
-@LocalBinding(jndiBinding = "${admin-control-jndi-pattern-prefix}AuthenticatorBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "AuthenticatorBean")
 public class AuthenticatorBean implements Authenticator {
 
 	@In

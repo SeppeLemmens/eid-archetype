@@ -18,7 +18,7 @@ import org.jboss.seam.international.LocaleSelector;
 
 @Stateless
 @Name("${control-seam-components-prefix}LanguageSelector")
-@LocalBinding(jndiBinding = "${control-jndi-pattern-prefix}LanguageSelectorBean")
+@LocalBinding(jndiBinding = Constants.JNDI_PREFIX + "LanguageSelectorBean")
 public class LanguageSelectorBean implements LanguageSelector {
 
 	private static final String LANGUAGE_SESSION_ATTRIBUTE = "LanguageSelectorBean.language";
