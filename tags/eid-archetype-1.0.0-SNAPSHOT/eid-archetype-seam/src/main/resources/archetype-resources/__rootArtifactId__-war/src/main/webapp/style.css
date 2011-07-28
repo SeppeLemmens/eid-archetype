@@ -1,0 +1,55 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+
+h1 {
+	color: gray;
+}
+
+h2 {
+	color: ${css-color};
+	font-size: large;
+}
+
+#header {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#language {
+	float: right;
+}
+
+#content {
+	width: 50%;
+	margin: 0 auto;
+	color: #303030;
+}
+
+#menu {
+	float: left;
+	width: 25%;
+}
+
+#menuPanel {
+	margin-right: 10px;
+}
+
+#login {
+	float: right;
+	width: 25%;
+}
+
+#loginPanel {
+	background-color: #d0d0d0;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.rich-pmenu-selected-element {
+	color: ${css-color};
+}
