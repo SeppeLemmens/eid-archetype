@@ -27,6 +27,7 @@
 	</developers>
 	<modules>
 		<module>eid-archetype-seam</module>
+		<module>eid-archetype-javaee6</module>
 	</modules>
 	<build>
 		<pluginManagement>
