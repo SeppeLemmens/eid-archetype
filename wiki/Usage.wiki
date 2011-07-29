@@ -24,7 +24,7 @@ The following technology stack is being using:
 
 Run the following command:
 {{{
-mvn archetype:generate -DarchetypeGroupId=be.fedict -DarchetypeArtifactId=eid-archetype-seam -DarchetypeVersion=1.0.0.Beta1 -DarchetypeRepository=https://www.e-contract.be/maven2/
+mvn archetype:generate -DarchetypeGroupId=be.fedict.eid-archetype -DarchetypeArtifactId=eid-archetype-seam -DarchetypeVersion=1.0.0.RC1 -DarchetypeRepository=https://www.e-contract.be/maven2/
 }}}
 
 This will generate the application blueprint.
