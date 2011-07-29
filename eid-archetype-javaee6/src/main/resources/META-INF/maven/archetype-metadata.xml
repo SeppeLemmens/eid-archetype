@@ -22,7 +22,7 @@
 			<defaultValue>example</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="data-source">
-			<defaultValue>java:/DefaultDS</defaultValue>
+			<defaultValue>java:jboss/datasources/ExampleDS</defaultValue>
 		</requiredProperty>
 	</requiredProperties>
 
@@ -43,6 +43,9 @@
 					</includes>
 				</fileSet>
 			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-ear" name="${rootArtifactId}-ear"
+			dir="__rootArtifactId__-ear">
 		</module>
 	</modules>
 
