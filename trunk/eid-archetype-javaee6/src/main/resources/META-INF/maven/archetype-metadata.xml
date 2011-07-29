@@ -5,4 +5,45 @@
 	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
 	name="eid-archetype-javaee6">
 
+	<requiredProperties>
+		<requiredProperty key="groupId">
+			<defaultValue>be.fedict.eid.example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="artifactId">
+			<defaultValue>eid-example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="version">
+			<defaultValue>1.0.0-SNAPSHOT</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="application-title">
+			<defaultValue>Example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="persistence-unit-name">
+			<defaultValue>example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="data-source">
+			<defaultValue>java:/DefaultDS</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+
+	<modules>
+		<module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa"
+			dir="__rootArtifactId__-jpa">
+			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+	</modules>
+
 </archetype-descriptor>
