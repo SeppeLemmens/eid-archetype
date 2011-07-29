@@ -23,6 +23,10 @@
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-jpa</artifactId>
 						</jarModule>
+						<ejbModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-model-ejb</artifactId>
+						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -38,6 +42,21 @@
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-jpa</artifactId>
 			<version>${version}</version>
+			<classifier>${environment}</classifier>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-model-ejb</artifactId>
+			<version>${version}</version>
+			<type>ejb</type>
+			<classifier>${environment}</classifier>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-model-ejb</artifactId>
+			<version>${version}</version>
+			<type>ejb-client</type>
+			<scope>provided</scope>
 			<classifier>${environment}</classifier>
 		</dependency>
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
