@@ -31,3 +31,34 @@ Start the standalone configuration via:
 {{{
 bin/standalone.sh
 }}}
+
+Enter the ...-ear directory of the project and deploy the EAR file on the local running JBoss AS via:
+{{{
+mvn jboss-as:deploy
+}}}
+
+Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.conf` config file:
+{{{
+<Location /eid-example>
+	Order allow,deny
+	Allow from all
+	ProxyPass ajp://localhost:8009/eid-example
+</Location>
+
+<Location /eid-example-admin>
+	Order allow,deny
+	Allow from all
+	ProxyPass ajp://localhost:8009/eid-example-admin
+</Location>
+}}}
+
+Restart the Apache server via:
+{{{
+sudo /etc/init.d/httpd restart
+}}}
+
+Also make sure that `mod_ssl` has been installed as the application requires SSL.
+
+Now you can navigate to:
+
+  * https://localhost/eid-example-admin/
