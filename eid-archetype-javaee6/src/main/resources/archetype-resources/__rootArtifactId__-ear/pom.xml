@@ -27,6 +27,10 @@
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-model-ejb</artifactId>
 						</ejbModule>
+						<ejbModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
+						</ejbModule>
 						<webModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-admin-war</artifactId>
@@ -62,6 +66,13 @@
 			<version>${version}</version>
 			<type>ejb-client</type>
 			<scope>provided</scope>
+			<classifier>${environment}</classifier>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-admin-control-ejb</artifactId>
+			<version>${version}</version>
+			<type>ejb</type>
 			<classifier>${environment}</classifier>
 		</dependency>
 		<dependency>
