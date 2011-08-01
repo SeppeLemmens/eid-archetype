@@ -24,6 +24,12 @@
 		<requiredProperty key="data-source">
 			<defaultValue>java:jboss/datasources/ExampleDS</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="css-color">
+			<defaultValue>#FF9000</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="context-root">
+			<defaultValue>eid-example</defaultValue>
+		</requiredProperty>
 	</requiredProperties>
 
 	<modules>
@@ -57,6 +63,20 @@
 					<directory>src/main/resources</directory>
 					<includes>
 						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-admin-war" name="${rootArtifactId}-admin-war"
+			dir="__rootArtifactId__-admin-war">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.xhtml</include>
+						<include>**/*.jsp</include>
+						<include>**/*.xml</include>
+						<include>**/*.css</include>
 					</includes>
 				</fileSet>
 			</fileSets>

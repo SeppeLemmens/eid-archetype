@@ -27,6 +27,11 @@
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-model-ejb</artifactId>
 						</ejbModule>
+						<webModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-admin-war</artifactId>
+							<contextRoot>/${context-root}-admin</contextRoot>
+						</webModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -57,6 +62,13 @@
 			<version>${version}</version>
 			<type>ejb-client</type>
 			<scope>provided</scope>
+			<classifier>${environment}</classifier>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-admin-war</artifactId>
+			<version>${version}</version>
+			<type>war</type>
 			<classifier>${environment}</classifier>
 		</dependency>
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
