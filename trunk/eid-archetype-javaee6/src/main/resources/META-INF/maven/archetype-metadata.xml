@@ -30,6 +30,9 @@
 		<requiredProperty key="context-root">
 			<defaultValue>eid-example</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="admin-control-cdi-components-prefix">
+			<defaultValue>exampleAdmin</defaultValue>
+		</requiredProperty>
 	</requiredProperties>
 
 	<modules>
