@@ -32,5 +32,9 @@
 			<type>ejb-client</type>
 			<classifier>${environment}</classifier>
 		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
 	</dependencies>
 </project>

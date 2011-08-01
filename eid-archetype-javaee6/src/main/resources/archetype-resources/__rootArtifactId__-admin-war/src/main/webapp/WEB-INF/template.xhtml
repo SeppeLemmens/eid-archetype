@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich">
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Expires" content="-1" />
-<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<title>${application-title} Admin Portal</title>
-<link rel="stylesheet" type="text/css"
-	href="#{facesContext.externalContext.requestContextPath}/style.css" />
-</head>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<title>${application-title} Admin Portal</title>
+	<link rel="stylesheet" type="text/css"
+		href="#{facesContext.externalContext.requestContextPath}/style.css" />
+</h:head>
 
 <body>
 
@@ -25,7 +26,12 @@
 	<f:view>
 		<div id="menu">
 			<div id="menuPanel">
-				Menu comes here
+				<h:form>
+					<rich:panelMenu selectedChild="#{${admin-control-cdi-components-prefix}MenuController.selectedChild}">
+						<rich:panelMenuItem label="Configuration" action="/admin/configuration.xhtml" />
+						<rich:panelMenuItem label="Privileges" action="/admin/privileges.xhtml" />
+					</rich:panelMenu>
+				</h:form>
 			</div>
 		</div>
 

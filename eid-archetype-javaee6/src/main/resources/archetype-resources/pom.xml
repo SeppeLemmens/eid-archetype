@@ -69,6 +69,18 @@
 				<artifactId>eid-idp-sp-protocol-saml2</artifactId>
 				<version>${eid-idp.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.richfaces</groupId>
+				<artifactId>richfaces-bom</artifactId>
+				<version>4.0.0.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>6.0</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
