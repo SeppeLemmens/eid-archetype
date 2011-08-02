@@ -81,6 +81,31 @@
 				<artifactId>javaee-api</artifactId>
 				<version>6.0</version>
 			</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-web-api</artifactId>
+				<version>6.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.seam.faces</groupId>
+				<artifactId>seam-faces</artifactId>
+				<version>${seam.faces.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.seam.security</groupId>
+				<artifactId>seam-security</artifactId>
+				<version>${seam.security.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ocpsoft</groupId>
+				<artifactId>prettyfaces-jsf2</artifactId>
+				<version>3.2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>1.6.2</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -163,6 +188,8 @@
 	<properties>
 		<eid-applet.version>1.0.3.GA</eid-applet.version>
 		<eid-idp.version>1.0.0.RC4</eid-idp.version>
+		<seam.security.version>3.0.0.Final</seam.security.version>
+		<seam.faces.version>3.1.0-SNAPSHOT</seam.faces.version>
 	</properties>
 
 	<profiles>

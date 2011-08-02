@@ -1,14 +1,14 @@
 package ${package}.admin;
 
 import javax.ejb.Remove;
-import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-@Stateful
-@Named(Constants.JNDI_PREFIX + "MenuController")
+import java.io.Serializable;
+
+@Named(Constants.CDI_PREFIX + "MenuController")
 @SessionScoped
-public class MenuControllerBean implements MenuController {
+public class MenuController implements Serializable {
 
 	private String selectedChild;
 
