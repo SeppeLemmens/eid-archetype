@@ -6,7 +6,23 @@
 <ui:composition template="/WEB-INF/template.xhtml">
 	<ui:define name="body">
 		<h2>Login</h2>
-		<p>This page will make the user to login.</p>
+		<p>Login using your eID card.</p>
+		<script type="text/javascript"
+			src="https://www.java.com/js/deployJava.js"></script>
+		<script type="text/javascript">
+			var attributes = {
+				code : 'be.fedict.eid.applet.Applet.class',
+				archive : 'eid-applet-package-${eid-applet.version}.jar',
+				width : 600,
+				height : 300
+			};
+			var parameters = {
+				TargetPage : 'postLogin.jsf?conversationId=#{conversation.id}',
+				AppletService : 'applet-service-authentication'
+			};
+			var version = '1.6';
+			deployJava.runApplet(attributes, parameters, version);
+		</script>
 	</ui:define>
 </ui:composition>
 </html>
