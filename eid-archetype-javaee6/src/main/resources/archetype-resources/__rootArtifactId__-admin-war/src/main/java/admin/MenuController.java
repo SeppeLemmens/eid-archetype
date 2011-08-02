@@ -8,6 +8,8 @@ import java.io.Serializable;
 @Named(Constants.CDI_PREFIX + "MenuController")
 @SessionScoped
 public class MenuController implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
 	private String selectedChild;
 
