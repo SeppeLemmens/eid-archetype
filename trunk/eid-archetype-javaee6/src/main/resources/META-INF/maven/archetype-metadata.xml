@@ -77,7 +77,7 @@
 					<directory>src/main/webapp</directory>
 					<includes>
 						<include>**/*.xhtml</include>
-						<include>**/*.jsp</include>
+						<include>**/*.jsf</include>
 						<include>**/*.xml</include>
 						<include>**/*.css</include>
 					</includes>
