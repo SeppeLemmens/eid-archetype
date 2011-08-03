@@ -42,7 +42,15 @@
 		</div>
 
 		<div id="login">
-			<div id="loginPanel">Login comes here</div>
+			<h:form rendered="#{identity.loggedIn}">
+				<div id="loginPanel">
+					<h:panelGrid columns="1">
+						<h:outputText
+							value="#{eid.identity.firstName} #{eid.identity.name}" />
+						<h:commandButton value="Logout" action="#{identity.logout}" />
+					</h:panelGrid>
+				</div>
+			</h:form>
 		</div>
 
 		<div id="content">
