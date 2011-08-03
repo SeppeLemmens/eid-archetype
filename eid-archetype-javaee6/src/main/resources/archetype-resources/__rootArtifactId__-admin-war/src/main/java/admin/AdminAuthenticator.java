@@ -1,8 +1,10 @@
 package ${package}.admin;
 
 import java.io.Serializable;
+import java.security.cert.X509Certificate;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.jboss.logging.Logger;
 import org.jboss.seam.security.Authenticator;
@@ -21,13 +23,19 @@ public class AdminAuthenticator extends BaseAuthenticator implements
 	@Inject
 	private Identity identity;
 
+	@Inject
+	private HttpSession httpSession;
+
 	@Override
 	public void authenticate() {
-		this.log.debug("authenticate");
+		X509Certificate authenticatedCertificate = (X509Certificate) this.httpSession
+				.getAttribute("eid.certs.authn");
+		this.log.debug("authenticate: "
+				+ authenticatedCertificate.getSubjectX500Principal());
 
 		// TODO: check this in the database
 		this.identity.addRole("admin", "USERS", "GROUP");
-		
+
 		setStatus(AuthenticationStatus.SUCCESS);
 		setUser(new SimpleUser("TODO"));
 	}

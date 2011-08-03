@@ -102,6 +102,11 @@
 				<version>${seam.security.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.jboss.seam.servlet</groupId>
+				<artifactId>seam-servlet</artifactId>
+				<version>3.0.0.Final</version>
+			</dependency>
+			<dependency>
 				<groupId>com.ocpsoft</groupId>
 				<artifactId>prettyfaces-jsf2</artifactId>
 				<version>3.2.0</version>
