@@ -11,13 +11,9 @@ public interface PageConfig {
 
 	static enum Pages {
 
-		@ViewPattern("/admin/configuration.xhtml")
+		@ViewPattern("/admin/*")
 		@Admin
-		CONFIGURATION,
-
-		@ViewPattern("/admin/privileges.xhtml")
-		@Admin
-		PRIVILEGES,
+		ADMIN_PAGES,
 
 		@FacesRedirect
 		@ViewPattern("/*")
