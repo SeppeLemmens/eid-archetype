@@ -12,6 +12,8 @@ import org.jboss.seam.security.BaseAuthenticator;
 import org.jboss.seam.security.Identity;
 import org.picketlink.idm.impl.api.model.SimpleUser;
 
+import ${package}.model.AdministratorManager;
+
 public class AdminAuthenticator extends BaseAuthenticator implements
 		Authenticator, Serializable {
 
@@ -26,17 +28,24 @@ public class AdminAuthenticator extends BaseAuthenticator implements
 	@Inject
 	private HttpSession httpSession;
 
+	@Inject
+	private AdministratorManager administratorManager;
+
 	@Override
 	public void authenticate() {
 		X509Certificate authenticatedCertificate = (X509Certificate) this.httpSession
 				.getAttribute("eid.certs.authn");
+		be.fedict.eid.applet.service.Identity eIDIdentity = (be.fedict.eid.applet.service.Identity) this.httpSession
+				.getAttribute("eid.identity");
 		this.log.debug("authenticate: "
 				+ authenticatedCertificate.getSubjectX500Principal());
 
-		// TODO: check this in the database
-		this.identity.addRole("admin", "USERS", "GROUP");
+		if (this.administratorManager.hasAdminRights(authenticatedCertificate,
+				eIDIdentity)) {
+			this.identity.addRole("admin", "USERS", "GROUP");
+		}
 
 		setStatus(AuthenticationStatus.SUCCESS);
-		setUser(new SimpleUser("TODO"));
+		setUser(new SimpleUser(eIDIdentity.getNationalNumber()));
 	}
 }

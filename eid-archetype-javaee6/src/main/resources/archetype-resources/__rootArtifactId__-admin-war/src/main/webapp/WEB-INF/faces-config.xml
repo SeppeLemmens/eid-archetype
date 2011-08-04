@@ -1,3 +1,4 @@
+#set( $symbol_pound = '#' )
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -8,7 +9,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-action>#{identity.logout}</from-action>
-			<if>#{true}</if>
+			<if>${symbol_pound}{true}</if>
 			<to-view-id>/index.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>

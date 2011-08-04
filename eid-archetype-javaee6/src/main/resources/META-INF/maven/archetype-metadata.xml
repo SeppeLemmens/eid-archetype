@@ -33,6 +33,12 @@
 		<requiredProperty key="admin-control-cdi-components-prefix">
 			<defaultValue>exampleAdmin</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="table-prefix">
+			<defaultValue>example_</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="jpa-named-query-prefix">
+			<defaultValue>eid.example</defaultValue>
+		</requiredProperty>
 	</requiredProperties>
 
 	<modules>
