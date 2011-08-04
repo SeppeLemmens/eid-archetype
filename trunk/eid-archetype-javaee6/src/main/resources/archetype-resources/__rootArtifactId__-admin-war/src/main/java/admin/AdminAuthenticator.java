@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.security.cert.X509Certificate;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import org.jboss.logging.Logger;
 import org.jboss.seam.security.Authenticator;
@@ -26,26 +25,26 @@ public class AdminAuthenticator extends BaseAuthenticator implements
 	private Identity identity;
 
 	@Inject
-	private HttpSession httpSession;
+	private AdministratorManager administratorManager;
 
 	@Inject
-	private AdministratorManager administratorManager;
+	private be.fedict.eid.applet.service.Identity eIDIdentity;
+
+	@Inject
+	@AuthCert
+	X509Certificate authCert;
 
 	@Override
 	public void authenticate() {
-		X509Certificate authenticatedCertificate = (X509Certificate) this.httpSession
-				.getAttribute("eid.certs.authn");
-		be.fedict.eid.applet.service.Identity eIDIdentity = (be.fedict.eid.applet.service.Identity) this.httpSession
-				.getAttribute("eid.identity");
 		this.log.debug("authenticate: "
-				+ authenticatedCertificate.getSubjectX500Principal());
+				+ this.authCert.getSubjectX500Principal());
 
-		if (this.administratorManager.hasAdminRights(authenticatedCertificate,
-				eIDIdentity)) {
+		if (this.administratorManager
+				.hasAdminRights(this.authCert, eIDIdentity)) {
 			this.identity.addRole("admin", "USERS", "GROUP");
 		}
 
 		setStatus(AuthenticationStatus.SUCCESS);
-		setUser(new SimpleUser(eIDIdentity.getNationalNumber()));
+		setUser(new SimpleUser(this.eIDIdentity.getNationalNumber()));
 	}
 }
