@@ -8,6 +8,32 @@
 	<ui:define name="body">
 		<h2>Configuration</h2>
 		<p>Configure the web application via this page.</p>
+		<h:form>
+			<rich:tabPanel switchType="client">
+				<rich:tab header="eID IdP">
+					<h:panelGrid columns="2">
+						<h:outputText value="SAML2 URL:" />
+						<h:inputText value="#{${admin-control-cdi-components-prefix}ConfigController.idpUrl}"
+							size="50" />
+
+						<h:outputText value="Issuer name:" />
+						<h:inputText value="#{${admin-control-cdi-components-prefix}ConfigController.idpIssuerName}"
+							size="50" />
+
+						<h:outputText value="Service fingerprint:" />
+						<h:inputText
+							value="#{${admin-control-cdi-components-prefix}ConfigController.idpFingerprint}" size="50" />
+
+						<h:outputText value="Service rollover fingerprint:" />
+						<h:inputText
+							value="#{${admin-control-cdi-components-prefix}ConfigController.idpRolloverFingerprint}"
+							size="50" />
+					</h:panelGrid>
+					<h:commandButton value="Save"
+						action="#{${admin-control-cdi-components-prefix}ConfigController.save}" />
+				</rich:tab>
+			</rich:tabPanel>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>
