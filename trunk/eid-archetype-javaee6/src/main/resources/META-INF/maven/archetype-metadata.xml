@@ -23,6 +23,7 @@
 		</requiredProperty>
 		<requiredProperty key="data-source">
 			<defaultValue>java:jboss/datasources/ExampleDS</defaultValue>
+			<!-- for GlassFish 3.1.1 this is: jdbc/__default -->
 		</requiredProperty>
 		<requiredProperty key="css-color">
 			<defaultValue>#FF9000</defaultValue>

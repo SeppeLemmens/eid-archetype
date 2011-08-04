@@ -45,6 +45,7 @@ public class AdminAuthenticator extends BaseAuthenticator implements
 		}
 
 		setStatus(AuthenticationStatus.SUCCESS);
-		setUser(new SimpleUser(this.eIDIdentity.getNationalNumber()));
+		String name = this.eIDIdentity.getFirstName() + " " + this.eIDIdentity.getName();
+		setUser(new SimpleUser(name));
 	}
 }
