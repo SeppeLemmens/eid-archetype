@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.jboss.logging.Logger;
+import org.jboss.seam.international.status.Messages;
 
 import ${package}.model.Configuration;
 import ${package}.model.ConfigurationProperty;
@@ -26,6 +27,9 @@ public class ConfigurationController {
 
 	@Inject
 	private Configuration configuration;
+	
+	@Inject
+	private Messages messages;
 
 	@PostConstruct
 	public void postConstruct() {
@@ -51,6 +55,7 @@ public class ConfigurationController {
 				this.idpRolloverFingerprint);
 		this.configuration.setValue(ConfigurationProperty.EID_IDP_ISSUER_NAME,
 				this.idpIssuerName);
+		this.messages.info("Configuration successfully saved.");
 		return "/admin/configuration";
 	}
 

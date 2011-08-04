@@ -6,8 +6,8 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:f="http://java.sun.com/jsf/core">
 <ui:composition template="/WEB-INF/template.xhtml">
+	<ui:define name="title">Privileges</ui:define>
 	<ui:define name="body">
-		<h2>Privileges</h2>
 		<p>Configure the administrator privileges via this page.</p>
 		<h:form>
 			<rich:extendedDataTable var="row" value="#{${admin-control-cdi-components-prefix}AdminList}"
