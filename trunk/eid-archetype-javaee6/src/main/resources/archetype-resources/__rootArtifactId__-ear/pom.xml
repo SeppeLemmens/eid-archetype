@@ -71,6 +71,10 @@
 			<type>war</type>
 			<classifier>${environment}</classifier>
 		</dependency>
+		<dependency>
+			<groupId>be.fedict.eid-applet</groupId>
+			<artifactId>eid-applet-service</artifactId>
+		</dependency>
 		<!-- The following dependencies are provided by the JavaEE runtime. -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -80,6 +84,11 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

@@ -31,5 +31,13 @@
 			<version>${version}</version>
 			<classifier>${environment}</classifier>
 		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>be.fedict.eid-applet</groupId>
+			<artifactId>eid-applet-service</artifactId>
+		</dependency>
 	</dependencies>
 </project>
