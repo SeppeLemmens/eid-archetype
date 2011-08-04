@@ -199,7 +199,7 @@
 		<eid-applet.version>1.0.3.GA</eid-applet.version>
 		<eid-idp.version>1.0.0.RC4</eid-idp.version>
 		<seam.security.version>3.0.0.Final</seam.security.version>
-		<seam.faces.version>3.1.0-SNAPSHOT</seam.faces.version>
+		<seam.faces.version>3.0.2.Final</seam.faces.version>
 	</properties>
 
 	<profiles>
