@@ -15,7 +15,7 @@ The following technology stack is being using:
 
 = Requirements =
 
-  * Java JDK 6.0
+  * Java 6.0
   * Maven 3.0.3+
   * JBoss AS 6.0.0.Final
   * Apache HTTPD Server
@@ -26,7 +26,7 @@ The following technology stack is being using:
 
 Run the following command:
 {{{
-mvn archetype:generate -DarchetypeGroupId=be.fedict.eid-archetype -DarchetypeArtifactId=eid-archetype-seam -DarchetypeVersion=1.0.0.RC1 -DarchetypeRepository=https://www.e-contract.be/maven2/
+mvn archetype:generate -DarchetypeGroupId=be.fedict.eid-archetype -DarchetypeArtifactId=eid-archetype-seam -DarchetypeVersion=1.0.0.RC2 -DarchetypeRepository=https://www.e-contract.be/maven2/
 }}}
 
 This will generate the application blueprint.
@@ -48,7 +48,7 @@ Enter the ...-ear directory of the project and deploy the EAR file on the local 
 mvn jboss:deploy
 }}}
 
-Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.conf` config file:
+Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.conf` config file (Fedora/CentOS):
 {{{
 <Location /eid-example>
 	Order allow,deny
@@ -65,7 +65,7 @@ Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.co
 
 Also make sure that `mod_ssl` has been installed as the application requires SSL.
 
-Restart the Apache server via:
+Restart the Apache server via (Fedora/CentOS):
 {{{
 sudo /etc/init.d/httpd restart
 }}}
