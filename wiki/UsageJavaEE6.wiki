@@ -1,4 +1,5 @@
 #summary eID Java EE 6 Archetype
+#sidebar TableOfContents
 
 = Introduction =
 
