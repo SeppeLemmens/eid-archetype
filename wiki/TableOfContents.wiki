@@ -1,0 +1,3 @@
+  * [Introduction]
+  * [Usage eID Seam Archetype]
+  * [UsageJavaEE6 eID Java EE 6 Archetype]
