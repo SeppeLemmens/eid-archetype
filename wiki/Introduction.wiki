@@ -1,0 +1,6 @@
+#summary eID Archetype Introduction
+#sidebar TableOfContents
+
+=eID Archetype=
+
+The eID Maven Archetype Project provides archetypes for the construction of web applications using different Java EE based technology stacks.
