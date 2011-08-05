@@ -1,4 +1,5 @@
 #summary eID Seam Archetype Usage
+#sidebar TableOfContents
 
 = Introduction =
 
