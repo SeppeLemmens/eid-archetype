@@ -8,6 +8,7 @@ The following technology stack is being using:
   * JBoss AS 5.1.0.GA or 6.0.0.Final
   * Seam 2.2
   * EJB 3.0
+  * JPA 1.0
   * JSF 1.2
   * Facelets 1.1
   * Richfaces 3.3
