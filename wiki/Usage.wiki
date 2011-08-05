@@ -22,6 +22,10 @@ The following technology stack is being using:
   * Working smart card reader
   * a Belgian eID card
 
+= Status =
+
+Fully implemented.
+
 = Usage =
 
 Run the following command:
