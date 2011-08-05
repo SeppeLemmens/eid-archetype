@@ -8,6 +8,9 @@ The following technology stack is being using:
   * CDI 1.0
   * EJB 3.1
   * JSF 2.0
+  * JPA 2.0
+  * RichFaces 4.0
+  * Seam 3
 
 = Requirements =
 
@@ -53,12 +56,12 @@ Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.co
 </Location>
 }}}
 
+Also make sure that `mod_ssl` has been installed as the application requires SSL.
+
 Restart the Apache server via:
 {{{
 sudo /etc/init.d/httpd restart
 }}}
-
-Also make sure that `mod_ssl` has been installed as the application requires SSL.
 
 Now you can navigate to:
 
