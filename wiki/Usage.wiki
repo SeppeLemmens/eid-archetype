@@ -62,12 +62,12 @@ Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.co
 </Location>
 }}}
 
+Also make sure that `mod_ssl` has been installed as the application requires SSL.
+
 Restart the Apache server via:
 {{{
 sudo /etc/init.d/httpd restart
 }}}
-
-Also make sure that `mod_ssl` has been installed as the application requires SSL.
 
 Now you can navigate to:
 
