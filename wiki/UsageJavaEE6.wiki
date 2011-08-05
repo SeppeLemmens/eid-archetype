@@ -9,17 +9,36 @@ The following technology stack is being using:
   * EJB 3.1
   * JSF 2.0
   * JPA 2.0
-  * RichFaces 4.0
-  * Seam 3
+  * !RichFaces 4.0
+  * Seam 3.0
 
 = Requirements =
 
   * Java JDK 6.0
   * Maven 3.0.3+
-  * JBoss AS 7.0.0.Final
+  * JBoss AS 7.0.0.Final (Web Profile is sufficient)
   * Apache HTTPD Server
   * Working smart card reader
   * a Belgian eID card
+
+= Status =
+
+For now only the admin portal has been implemented.
+
+= Usage =
+
+Run the following command:
+{{{
+mvn archetype:generate -DarchetypeGroupId=be.fedict.eid-archetype -DarchetypeArtifactId=eid-archetype-javaee6 -DarchetypeVersion=1.0.0.RC2 -DarchetypeRepository=https://www.e-contract.be/maven2/
+}}}
+
+This will generate the application blueprint.
+
+Now simply enter the project directory and run:
+{{{
+mvn clean install
+}}}
+
 
 = JBoss AS 7.0.0.Final =
 
