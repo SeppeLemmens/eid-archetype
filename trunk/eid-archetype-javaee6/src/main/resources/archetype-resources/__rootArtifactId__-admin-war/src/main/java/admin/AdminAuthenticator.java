@@ -11,6 +11,9 @@ import org.jboss.seam.security.BaseAuthenticator;
 import org.jboss.seam.security.Identity;
 import org.picketlink.idm.impl.api.model.SimpleUser;
 
+import be.fedict.eid.applet.service.cdi.BelgianCertificate;
+import be.fedict.eid.applet.service.cdi.BelgianCertificate.CERTIFICATE_TYPE;
+
 import ${package}.model.AdministratorManager;
 
 public class AdminAuthenticator extends BaseAuthenticator implements
@@ -31,7 +34,7 @@ public class AdminAuthenticator extends BaseAuthenticator implements
 	private be.fedict.eid.applet.service.Identity eIDIdentity;
 
 	@Inject
-	@AuthCert
+	@BelgianCertificate(CERTIFICATE_TYPE.AUTH)
 	X509Certificate authCert;
 
 	@Override
