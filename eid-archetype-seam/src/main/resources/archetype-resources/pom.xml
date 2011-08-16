@@ -272,10 +272,10 @@
 	</repositories>
 
 	<properties>
-		<eid-applet.version>1.0.3.GA</eid-applet.version>
+		<eid-applet.version>1.0.4.Beta2</eid-applet.version>
 		<richfaces.version>3.3.3.Final</richfaces.version>
 		<seam.version>2.2.2.Final</seam.version>
-		<eid-idp.version>1.0.0.RC4</eid-idp.version>
+		<eid-idp.version>1.0.0.RC5</eid-idp.version>
 	</properties>
 
 	<profiles>
