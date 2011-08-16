@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich">
+<body>
+	<ui:composition template="/WEB-INF/template.xhtml">
+		<ui:define name="body">
+			<h2>Configuration</h2>
+			<p>Configure the web application via this page.</p>
+			<h:form>
+				<rich:tabPanel switchType="client">
+					<rich:tab label="eID IdP">
+						<h:panelGrid columns="2">
+							<h:outputText value="SAML2 URL:" />
+							<h:inputText
+								value="#{${admin-control-seam-components-prefix}Config.idpUrl}"
+								size="50" />
+
+							<h:outputText value="Issuer name:" />
+							<h:inputText
+								value="#{${admin-control-seam-components-prefix}Config.idpIssuerName}"
+								size="50" />
+
+							<h:outputText value="Service fingerprint:" />
+							<h:inputText
+								value="#{${admin-control-seam-components-prefix}Config.idpFingerprint}"
+								size="50" />
+
+							<h:outputText value="Service rollover fingerprint:" />
+							<h:inputText
+								value="#{${admin-control-seam-components-prefix}Config.idpRolloverFingerprint}"
+								size="50" />
+						</h:panelGrid>
+						<h:commandButton value="Save"
+							action="#{${admin-control-seam-components-prefix}Config.save}" />
+					</rich:tab>
+				</rich:tabPanel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
