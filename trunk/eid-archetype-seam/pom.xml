@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>be.fedict</groupId>
 		<artifactId>eid-archetype</artifactId>
-		<version>1.0.0.RC3</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<name>eID/Seam2.2/JSF1.2/EJB3.0/JPA1.0/RichFaces3.3/Facelets/JBoss5.1-6.0</name>
 	<groupId>be.fedict.eid-archetype</groupId>
 	<artifactId>eid-archetype-seam</artifactId>
-	<version>1.0.0.RC3</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>maven-archetype</packaging>
 	<build>
 		<extensions>
