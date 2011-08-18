@@ -85,3 +85,26 @@ sudo /etc/init.d/httpd restart
 Now you can navigate to:
 
   * https://localhost/eid-example-admin/
+
+= !GlassFish 3.1.1 =
+
+While creating the application using the Maven eID Archetype, you have to select a different value for `data-source`.
+{{{
+jdbc/__default
+}}}
+
+Start the default domain of !GlassFish via:
+{{{
+./asadmin
+asadmin> list-domains
+asadmin> start-domain domain1
+}}}
+
+Copy the EAR file to the !GlassFish autodeploy directory:
+{{{
+cp the-ear-file.ear glassfish/domains/domain1/autodeploy/
+}}}
+
+Now you can navigate to:
+
+  * https://localhost:8181/eid-example-admin/
