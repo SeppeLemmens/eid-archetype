@@ -2,9 +2,9 @@ package ${package}.admin;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.richfaces.component.UIExtendedDataTable;
@@ -16,7 +16,7 @@ import ${package}.model.AdministratorManager;
 @RequestScoped
 public class PrivilegesController {
 
-	@Inject
+	@EJB
 	private AdministratorManager administratorManager;
 
 	private UIExtendedDataTable dataTable;

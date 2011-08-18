@@ -7,8 +7,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 
-import be.fedict.eid.applet.service.Identity;
-
 @Named(Constants.CDI_PREFIX + "eIDController")
 public class BelgianIdentityCardController {
 
