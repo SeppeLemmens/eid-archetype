@@ -18,7 +18,7 @@
 			};
 			var parameters = {
 				TargetPage : 'postLogin.jsf',
-				AppletService : 'applet-service-authentication'
+				AppletService : 'applet-service-authentication;jsessionid=#{facesContext.externalContext.getSession(false).id}'
 			};
 			var version = '1.6';
 			deployJava.runApplet(attributes, parameters, version);
