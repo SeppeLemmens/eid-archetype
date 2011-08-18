@@ -101,6 +101,13 @@ asadmin> list-domains
 asadmin> start-domain domain1
 }}}
 
+Create an AJP connector via:
+{{{
+./asadmin
+asadmin> create-network-listener --listenerport 8009 --jkenabled=true --protocol http-listener-1 ajp-listener
+asadmin> list-network-listeners
+}}}
+
 Copy the EAR file to the !GlassFish autodeploy directory:
 {{{
 cp the-ear-file.ear glassfish/domains/domain1/autodeploy/
