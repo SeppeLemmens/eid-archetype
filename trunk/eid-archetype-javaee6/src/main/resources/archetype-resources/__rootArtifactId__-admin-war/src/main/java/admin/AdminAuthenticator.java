@@ -3,6 +3,7 @@ package ${package}.admin;
 import java.io.Serializable;
 import java.security.cert.X509Certificate;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 
 import org.jboss.logging.Logger;
@@ -27,7 +28,7 @@ public class AdminAuthenticator extends BaseAuthenticator implements
 	@Inject
 	private Identity identity;
 
-	@Inject
+	@EJB
 	private AdministratorManager administratorManager;
 
 	@Inject

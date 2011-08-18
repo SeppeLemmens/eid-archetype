@@ -1,6 +1,7 @@
 package ${package}.admin;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,7 +26,7 @@ public class ConfigurationController {
 
 	private String idpRolloverFingerprint;
 
-	@Inject
+	@EJB
 	private Configuration configuration;
 	
 	@Inject
