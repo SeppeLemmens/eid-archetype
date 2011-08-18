@@ -20,7 +20,7 @@ The following technology stack is being using:
   * a Belgian eID card
   * a Java EE 6 application server like:
     * JBoss AS 7.0.1.Final (Web Profile is sufficient) together with Apache HTTPD Server
-    * Oracle !GlassFish 3.1.1
+    * Oracle !GlassFish 3.1.1 (eID login still not working)
 
 = Status =
 
@@ -101,13 +101,6 @@ asadmin> list-domains
 asadmin> start-domain domain1
 }}}
 
-Create an AJP connector via:
-{{{
-./asadmin
-asadmin> create-network-listener --listenerport 8009 --jkenabled=true --protocol http-listener-1 ajp-listener
-asadmin> list-network-listeners
-}}}
-
 Copy the EAR file to the !GlassFish autodeploy directory:
 {{{
 cp the-ear-file.ear glassfish/domains/domain1/autodeploy/
@@ -116,3 +109,40 @@ cp the-ear-file.ear glassfish/domains/domain1/autodeploy/
 Now you can navigate to:
 
   * https://localhost:8181/eid-example-admin/
+
+Install Apache `mod_jk`. Configure `/etc/httpd/conf.d/mod_jk.conf`
+{{{
+LoadModule jk_module modules/mod_jk.so
+
+JkWorkersFile location-of-your-glassfish/domains/domain1/config/glassfish-jk.properties
+
+JkMount /eid-example-admin/* eid-example-admin
+JkAutoAlias /eid-example-admin
+}}}
+
+The `glassfish-jk.properties` configuration file should contain:
+{{{
+worker.list=worker1
+worker.worker1.type=ajp13
+worker.worker1.host=localhost.localdomain
+worker.worker1.port=8009
+worker.worker1.lbfactor=50
+worker.worker1.cachesize=10
+worker.worker1.cache_timeout=600
+worker.worker1.socket_keepalive=1
+worker.worker1.socket_timeout=300
+}}}
+
+Create an AJP connector via:
+{{{
+./asadmin
+asadmin> create-network-listener --listenerport 8009 --jkenabled=true --protocol http-listener-1 ajp-listener
+asadmin> list-network-listeners
+asadmin> get server-config.network-config.network-listeners.network-listener.ajp-listener.*
+asadmin> stop-domain domain1
+asadmin> start-domain domain1
+}}}
+
+Now you can navigate to:
+
+  * https://localhost/eid-example-admin/
