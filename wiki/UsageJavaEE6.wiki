@@ -16,10 +16,11 @@ The following technology stack is being using:
 
   * Java JDK 6.0
   * Maven 3.0.3+
-  * JBoss AS 7.0.0.Final (Web Profile is sufficient)
-  * Apache HTTPD Server
   * Working smart card reader
   * a Belgian eID card
+  * a Java EE 6 application server like:
+    * JBoss AS 7.0.1.Final (Web Profile is sufficient) together with Apache HTTPD Server
+    * Oracle !GlassFish 3.1.1
 
 = Status =
 
