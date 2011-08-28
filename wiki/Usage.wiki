@@ -5,7 +5,7 @@
 
 The eID Seam Archetype artifact provides an automatic generation of a blueprint for a Java EE applications with full eID integration. 
 The following technology stack is being using:
-  * JBoss AS 5.1.0.GA or 6.0.0.Final
+  * JBoss AS 5.1.0.GA, 6.0.0.Final, or 6.1.0.Final
   * Seam 2.2
   * EJB 3.0
   * JPA 1.0
@@ -17,7 +17,7 @@ The following technology stack is being using:
 
   * Java 6.0
   * Maven 3.0.3+
-  * JBoss AS 6.0.0.Final
+  * JBoss AS 6.1.0.Final
   * Apache HTTPD Server
   * Working smart card reader
   * a Belgian eID card
@@ -40,9 +40,9 @@ Now simply enter the project directory and run:
 mvn clean install
 }}}
 
-Launch (Linux) JBoss AS 6.0.0.Final via:
+Launch (Linux) JBoss AS 6.1.0.Final via:
 {{{
-cd jboss-6.0.0.Final
+cd jboss-6.1.0.Final
 cd bin
 ./run.sh
 }}}
