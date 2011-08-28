@@ -61,7 +61,7 @@ Enter the ...-ear directory of the project and deploy the EAR file on the local 
 mvn jboss-as:deploy
 }}}
 
-Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.conf` config file:
+Configure your Apache front-end server via the `/etc/httpd/conf.d/eid-example.conf` config file (CentOS/Fedora):
 {{{
 <Location /eid-example>
 	Order allow,deny
@@ -81,6 +81,13 @@ Also make sure that `mod_ssl` has been installed as the application requires SSL
 Restart the Apache server via:
 {{{
 sudo /etc/init.d/httpd restart
+}}}
+
+Configure Apache2 on Ubuntu as follows.
+{{{
+sudo a2ensite default-ssl
+sudo a2enmod ssl
+sudo /etc/init.d/apache2 restart
 }}}
 
 Now you can navigate to:
