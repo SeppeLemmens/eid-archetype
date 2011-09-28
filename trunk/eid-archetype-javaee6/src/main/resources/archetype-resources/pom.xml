@@ -70,6 +70,11 @@
 				<version>${eid-applet.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>be.fedict.eid-applet</groupId>
+				<artifactId>eid-applet-js</artifactId>
+				<version>${eid-applet.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>be.fedict.eid-idp</groupId>
 				<artifactId>eid-idp-sp-protocol-saml2</artifactId>
 				<version>${eid-idp.version}</version>
@@ -206,8 +211,8 @@
 	</pluginRepositories>
 
 	<properties>
-		<eid-applet.version>1.0.4.Beta2</eid-applet.version>
-		<eid-idp.version>1.0.0.RC5</eid-idp.version>
+		<eid-applet.version>1.0.4.Beta4</eid-applet.version>
+		<eid-idp.version>1.0.0.RC6</eid-idp.version>
 		<seam.security.version>3.0.0.Final</seam.security.version>
 		<seam.faces.version>3.0.2.Final</seam.faces.version>
 	</properties>
