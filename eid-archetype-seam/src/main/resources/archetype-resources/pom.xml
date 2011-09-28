@@ -111,6 +111,11 @@
 				<version>${eid-applet.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>be.fedict.eid-applet</groupId>
+				<artifactId>eid-applet-js</artifactId>
+				<version>${eid-applet.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>commons-codec</groupId>
 				<artifactId>commons-codec</artifactId>
 				<version>1.5</version>
@@ -272,10 +277,10 @@
 	</repositories>
 
 	<properties>
-		<eid-applet.version>1.0.4.Beta2</eid-applet.version>
+		<eid-applet.version>1.0.4.Beta4</eid-applet.version>
 		<richfaces.version>3.3.3.Final</richfaces.version>
 		<seam.version>2.2.2.Final</seam.version>
-		<eid-idp.version>1.0.0.RC5</eid-idp.version>
+		<eid-idp.version>1.0.0.RC6</eid-idp.version>
 	</properties>
 
 	<profiles>
