@@ -7,8 +7,8 @@
 	<ui:define name="body">
 		<h2>Login</h2>
 		<p>Login using your eID card.</p>
-		<script type="text/javascript"
-			src="https://www.java.com/js/deployJava.js"></script>
+		<script type="text/javascript" src="./deployJava.js"></script>
+		<script type="text/javascript" src="./deploy-eid-applet.js"></script>
 		<script type="text/javascript">
         var attributes = {
                 code :'be.fedict.eid.applet.Applet.class',
@@ -20,8 +20,7 @@
                 TargetPage :'postLogin.seam?conversationId=#{conversation.id}',
                 AppletService :'applet-service-authentication'
         };
-        var version = '1.6';
-        deployJava.runApplet(attributes, parameters, version);
+        deployJavaEIDApplet.runApplet(attributes, parameters);
 </script>
 	</ui:define>
 </ui:composition>
