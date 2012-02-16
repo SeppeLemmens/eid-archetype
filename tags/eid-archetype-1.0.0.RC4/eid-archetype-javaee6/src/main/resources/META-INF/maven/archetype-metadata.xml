@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+	name="eid-archetype-javaee6">
+
+	<requiredProperties>
+		<requiredProperty key="groupId">
+			<defaultValue>be.fedict.eid.example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="artifactId">
+			<defaultValue>eid-example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="version">
+			<defaultValue>1.0.0-SNAPSHOT</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="application-title">
+			<defaultValue>Example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="persistence-unit-name">
+			<defaultValue>example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="data-source">
+			<defaultValue>java:jboss/datasources/ExampleDS</defaultValue>
+			<!-- for GlassFish 3.1.1 this is: jdbc/__default -->
+		</requiredProperty>
+		<requiredProperty key="css-color">
+			<defaultValue>#FF9000</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="context-root">
+			<defaultValue>eid-example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="admin-control-cdi-components-prefix">
+			<defaultValue>exampleAdmin</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="table-prefix">
+			<defaultValue>example_</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="jpa-named-query-prefix">
+			<defaultValue>eid.example</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="application-server">
+			<defaultValue>jboss-as</defaultValue>
+			<!-- for GlassFish 3.1.1 this is: glassfish -->
+		</requiredProperty>
+	</requiredProperties>
+
+	<modules>
+		<module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa"
+			dir="__rootArtifactId__-jpa">
+			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-model-ejb" name="${rootArtifactId}-model-ejb"
+			dir="__rootArtifactId__-model-ejb">
+			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-admin-war" name="${rootArtifactId}-admin-war"
+			dir="__rootArtifactId__-admin-war">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.xhtml</include>
+						<include>**/*.jsf</include>
+						<include>**/*.xml</include>
+						<include>**/*.css</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-ear" name="${rootArtifactId}-ear"
+			dir="__rootArtifactId__-ear">
+		</module>
+	</modules>
+
+</archetype-descriptor>
