@@ -100,10 +100,26 @@
 		<dependency>
 			<groupId>org.jboss.seam.security</groupId>
 			<artifactId>seam-security</artifactId>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.spec.javax.servlet</groupId>
+					<artifactId>jboss-servlet-api_3.0_spec</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.jboss.seam.servlet</groupId>
-			<artifactId>seam-servlet</artifactId>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.ocpsoft</groupId>
@@ -131,6 +147,12 @@
 		<dependency>
 			<groupId>be.fedict.eid-applet</groupId>
 			<artifactId>eid-applet-service-cdi</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.seam.servlet</groupId>
+					<artifactId>seam-servlet</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 

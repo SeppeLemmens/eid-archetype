@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
-<ui:composition template="/WEB-INF/template.xhtml">
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Login</ui:define>
 	<ui:define name="body">
 		<p>Login using your eID card.</p>
@@ -14,14 +14,23 @@
 				code : 'be.fedict.eid.applet.Applet.class',
 				archive : 'eid-applet-package-${eid-applet.version}.jar',
 				width : 600,
-				height : 300
+				height : 300,
+				mayscript : 'true'
 			};
 			var parameters = {
-				TargetPage : 'postLogin.jsf',
+				TargetPage : 'javascript:login();',
 				AppletService : 'applet-service-authentication;jsessionid=#{facesContext.externalContext.getSession(false).id}'
 			};
 			deployJavaEIDApplet.runApplet(attributes, parameters);
 		</script>
+		<script type="text/javascript">
+			function login() {
+				document.getElementById("loginForm:submit").click();
+			}
+		</script>
+		<h:form id="loginForm">
+			<h:commandButton style="display:none" id="submit"
+				action="#{identity.login}" value="Log in" />
+		</h:form>
 	</ui:define>
 </ui:composition>
-</html>

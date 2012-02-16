@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:rich="http://richfaces.org/rich">
-<ui:composition template="/WEB-INF/template.xhtml">
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Configuration</ui:define>
 	<ui:define name="body">
 		<p>Configure the web application via this page.</p>
@@ -13,16 +13,19 @@
 				<rich:tab header="eID IdP">
 					<h:panelGrid columns="2">
 						<h:outputText value="SAML2 URL:" />
-						<h:inputText value="#{${admin-control-cdi-components-prefix}ConfigController.idpUrl}"
+						<h:inputText
+							value="#{${admin-control-cdi-components-prefix}ConfigController.idpUrl}"
 							size="50" />
 
 						<h:outputText value="Issuer name:" />
-						<h:inputText value="#{${admin-control-cdi-components-prefix}ConfigController.idpIssuerName}"
+						<h:inputText
+							value="#{${admin-control-cdi-components-prefix}ConfigController.idpIssuerName}"
 							size="50" />
 
 						<h:outputText value="Service fingerprint:" />
 						<h:inputText
-							value="#{${admin-control-cdi-components-prefix}ConfigController.idpFingerprint}" size="50" />
+							value="#{${admin-control-cdi-components-prefix}ConfigController.idpFingerprint}"
+							size="50" />
 
 						<h:outputText value="Service rollover fingerprint:" />
 						<h:inputText
@@ -36,4 +39,3 @@
 		</h:form>
 	</ui:define>
 </ui:composition>
-</html>
