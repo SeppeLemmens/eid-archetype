@@ -119,7 +119,11 @@
 		<dependency>
 			<groupId>org.jboss.logging</groupId>
 			<artifactId>jboss-logging</artifactId>
+#if( $application-server == "jboss-as" )
 			<scope>provided</scope>
+#else
+			<scope>compile</scope>
+#end
 		</dependency>
 		<dependency>
 			<groupId>com.ocpsoft</groupId>
