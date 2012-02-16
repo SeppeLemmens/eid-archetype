@@ -5,6 +5,7 @@ import java.security.cert.X509Certificate;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.jboss.logging.Logger;
 import org.jboss.seam.security.Authenticator;
@@ -17,6 +18,7 @@ import be.fedict.eid.applet.service.cdi.BelgianCertificate.CERTIFICATE_TYPE;
 
 import ${package}.model.AdministratorManager;
 
+@Named(Constants.CDI_PREFIX + "Authenticator")
 public class AdminAuthenticator extends BaseAuthenticator implements
 		Authenticator, Serializable {
 
