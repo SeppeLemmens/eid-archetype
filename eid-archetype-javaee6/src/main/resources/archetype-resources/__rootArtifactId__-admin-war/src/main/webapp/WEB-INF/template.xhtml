@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -9,8 +8,7 @@
 
 <f:view>
 	<h:head>
-		<meta http-equiv="Content-Type"
-			content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 		<meta http-equiv="Expires" content="-1" />
@@ -48,7 +46,8 @@
 					<h:panelGrid columns="1">
 						<h:panelGrid columns="2">
 							<a4j:mediaOutput element="img" cacheable="false"
-								mimeType="image/jpeg" createContent="#{${admin-control-cdi-components-prefix}eIDController.createPhoto}" />
+								mimeType="image/jpeg"
+								createContent="#{${admin-control-cdi-components-prefix}eIDController.createPhoto}" />
 							<h:panelGroup>
 								<h:panelGrid columns="1">
 									<h:outputText
@@ -67,7 +66,9 @@
 		</div>
 
 		<div id="content">
-			<h2><ui:insert name="title">Default Title</ui:insert></h2>
+			<h2>
+				<ui:insert name="title">Default Title</ui:insert>
+			</h2>
 			<rich:messages globalOnly="true" />
 			<ui:insert name="body">
 				<p>Default Body</p>
