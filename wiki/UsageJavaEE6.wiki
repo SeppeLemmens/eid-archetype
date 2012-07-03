@@ -49,7 +49,7 @@ Add to `socket-binding-group` of `standalone/configuration/standalone.xml`
 }}}
 Also add to `subsystem xmlns="urn:jboss:domain:web:1.0"`
 {{{
-<connector name="ajp" protocol="AJP/1.3" scheme="ajp" socket-binding="ajp"/>
+<connector name="ajp" protocol="AJP/1.3" scheme="https" socket-binding="ajp"/>
 }}}
 Start the standalone configuration via:
 {{{
