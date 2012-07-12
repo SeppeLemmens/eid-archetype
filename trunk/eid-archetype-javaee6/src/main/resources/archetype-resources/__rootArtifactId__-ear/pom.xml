@@ -19,10 +19,6 @@
 					<version>6</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
-						<jarModule>
-							<groupId>${groupId}</groupId>
-							<artifactId>${rootArtifactId}-jpa</artifactId>
-						</jarModule>
 						<ejbModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-model-ejb</artifactId>
@@ -43,12 +39,6 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-			<groupId>${groupId}</groupId>
-			<artifactId>${rootArtifactId}-jpa</artifactId>
-			<version>${version}</version>
-			<classifier>${environment}</classifier>
-		</dependency>
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-model-ejb</artifactId>
