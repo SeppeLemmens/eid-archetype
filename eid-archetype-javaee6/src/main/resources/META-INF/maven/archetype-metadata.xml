@@ -47,23 +47,6 @@
 	</requiredProperties>
 
 	<modules>
-		<module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa"
-			dir="__rootArtifactId__-jpa">
-			<fileSets>
-				<fileSet filtered="true" packaged="true" encoding="UTF-8">
-					<directory>src/main/java</directory>
-					<includes>
-						<include>**/*.java</include>
-					</includes>
-				</fileSet>
-				<fileSet filtered="true" encoding="UTF-8">
-					<directory>src/main/resources</directory>
-					<includes>
-						<include>**/*.xml</include>
-					</includes>
-				</fileSet>
-			</fileSets>
-		</module>
 		<module id="${rootArtifactId}-model-ejb" name="${rootArtifactId}-model-ejb"
 			dir="__rootArtifactId__-model-ejb">
 			<fileSets>
