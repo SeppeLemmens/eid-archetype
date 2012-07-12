@@ -1,13 +1,11 @@
 package ${package}.admin;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
-
-import org.jboss.logging.Logger;
-import org.jboss.seam.international.status.Messages;
 
 import ${package}.model.Configuration;
 import ${package}.model.ConfigurationProperty;
@@ -15,8 +13,6 @@ import ${package}.model.ConfigurationProperty;
 @Named(Constants.CDI_PREFIX + "ConfigController")
 @RequestScoped
 public class ConfigurationController {
-
-	private Logger log = Logger.getLogger(ConfigurationController.class);
 
 	private String idpUrl;
 
@@ -29,12 +25,8 @@ public class ConfigurationController {
 	@EJB
 	private Configuration configuration;
 	
-	@Inject
-	private Messages messages;
-
 	@PostConstruct
 	public void postConstruct() {
-		this.log.debug("postConstruct");
 		this.idpUrl = this.configuration
 				.getValue(ConfigurationProperty.EID_IDP_URL);
 		this.idpFingerprint = this.configuration
@@ -46,7 +38,6 @@ public class ConfigurationController {
 	}
 
 	public String save() {
-		this.log.debug("save");
 		this.configuration.setValue(ConfigurationProperty.EID_IDP_URL,
 				this.idpUrl);
 		this.configuration.setValue(ConfigurationProperty.EID_IDP_FINGERPRINT,
@@ -56,7 +47,9 @@ public class ConfigurationController {
 				this.idpRolloverFingerprint);
 		this.configuration.setValue(ConfigurationProperty.EID_IDP_ISSUER_NAME,
 				this.idpIssuerName);
-		this.messages.info("Configuration successfully saved.");
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		facesContext.addMessage(null, new FacesMessage(
+				FacesMessage.SEVERITY_INFO, "Configuration successfully saved.", null));
 		return "/admin/configuration";
 	}
 

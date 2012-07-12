@@ -30,7 +30,7 @@
 		</script>
 		<h:form id="loginForm">
 			<h:commandButton style="display:none" id="submit"
-				action="#{identity.login}" value="Log in" />
+				action="#{${admin-control-cdi-components-prefix}AuthenticationController.login}" value="Login" />
 		</h:form>
 	</ui:define>
 </ui:composition>
