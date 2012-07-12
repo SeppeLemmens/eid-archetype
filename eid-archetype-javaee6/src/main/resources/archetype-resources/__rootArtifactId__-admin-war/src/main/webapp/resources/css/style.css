@@ -8,7 +8,7 @@ h1 {
 }
 
 h2 {
-	color: ${css-color};
+	color: #FF9000;
 	font-size: large;
 }
 
@@ -48,8 +48,4 @@ h2 {
 	border-width: 1px;
 	padding: 10px;
 	margin-left: 10px;
-}
-
-.rich-pmenu-selected-element {
-	color: ${css-color};
 }

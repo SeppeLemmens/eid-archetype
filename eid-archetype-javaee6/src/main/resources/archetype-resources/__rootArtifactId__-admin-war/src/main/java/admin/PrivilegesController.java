@@ -7,8 +7,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 
-import org.richfaces.component.UIExtendedDataTable;
-
+import ${package}.admin.Constants;
+import ${package}.admin.RolesAllowed;
+import ${package}.entity.AdministratorEntity;
 import ${package}.entity.AdministratorEntity;
 import ${package}.model.AdministratorManager;
 
@@ -19,37 +20,23 @@ public class PrivilegesController {
 	@EJB
 	private AdministratorManager administratorManager;
 
-	private UIExtendedDataTable dataTable;
-
-	@Admin
-	public String approve() {
-		AdministratorEntity selectedAdmin = (AdministratorEntity) this.dataTable
-				.getRowData();
-		this.administratorManager.approveAdmin(selectedAdmin.getId());
+	@RolesAllowed("admin")
+	public String approve(AdministratorEntity administrator) {
+		this.administratorManager.approveAdmin(administrator.getId());
 		return "/admin/privileges";
 	}
 
-	@Admin
-	public String delete() {
-		AdministratorEntity selectedAdmin = (AdministratorEntity) this.dataTable
-				.getRowData();
-		this.administratorManager.removeAdmin(selectedAdmin.getId());
+	@RolesAllowed("admin")
+	public String delete(AdministratorEntity administrator) {
+		this.administratorManager.removeAdmin(administrator.getId());
 		return "/admin/privileges";
 	}
 
 	@Produces
 	@RequestScoped
 	@Named(Constants.CDI_PREFIX + "AdminList")
-	@Admin
+	@RolesAllowed("admin")
 	public List<AdministratorEntity> initAdminList() {
 		return this.administratorManager.listAdmins();
-	}
-
-	public UIExtendedDataTable getDataTable() {
-		return this.dataTable;
-	}
-
-	public void setDataTable(UIExtendedDataTable dataTable) {
-		this.dataTable = dataTable;
 	}
 }

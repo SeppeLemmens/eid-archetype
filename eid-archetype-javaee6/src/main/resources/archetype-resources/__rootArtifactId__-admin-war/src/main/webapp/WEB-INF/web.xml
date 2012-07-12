@@ -32,10 +32,6 @@
 			<param-name>Logoff</param-name>
 			<param-value>true</param-value>
 		</init-param>
-		<init-param>
-			<param-name>NoPKCS11</param-name>
-			<param-value>true</param-value>
-		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AuthenticationAppletServiceServlet</servlet-name>

@@ -3,39 +3,37 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:rich="http://richfaces.org/rich"
-	template="/WEB-INF/template.xhtml">
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Configuration</ui:define>
 	<ui:define name="body">
 		<p>Configure the web application via this page.</p>
-		<h:form>
-			<rich:tabPanel switchType="client">
-				<rich:tab header="eID IdP">
-					<h:panelGrid columns="2">
-						<h:outputText value="SAML2 URL:" />
-						<h:inputText
-							value="#{${admin-control-cdi-components-prefix}ConfigController.idpUrl}"
-							size="50" />
+		<p:tabView>
+			<p:tab title="eID IdP">
+				<h:panelGrid columns="1">
+					<h:form>
+						<h:panelGrid columns="2">
+							<h:outputText value="SAML2 URL:" />
+							<h:inputText value="#{${admin-control-cdi-components-prefix}ConfigController.idpUrl}"
+								size="50" />
 
-						<h:outputText value="Issuer name:" />
-						<h:inputText
-							value="#{${admin-control-cdi-components-prefix}ConfigController.idpIssuerName}"
-							size="50" />
+							<h:outputText value="Issuer name:" />
+							<h:inputText
+								value="#{${admin-control-cdi-components-prefix}ConfigController.idpIssuerName}" size="50" />
 
-						<h:outputText value="Service fingerprint:" />
-						<h:inputText
-							value="#{${admin-control-cdi-components-prefix}ConfigController.idpFingerprint}"
-							size="50" />
+							<h:outputText value="Service fingerprint:" />
+							<h:inputText
+								value="#{${admin-control-cdi-components-prefix}ConfigController.idpFingerprint}" size="50" />
 
-						<h:outputText value="Service rollover fingerprint:" />
-						<h:inputText
-							value="#{${admin-control-cdi-components-prefix}ConfigController.idpRolloverFingerprint}"
-							size="50" />
-					</h:panelGrid>
-					<h:commandButton value="Save"
-						action="#{${admin-control-cdi-components-prefix}ConfigController.save}" />
-				</rich:tab>
-			</rich:tabPanel>
-		</h:form>
+							<h:outputText value="Service rollover fingerprint:" />
+							<h:inputText
+								value="#{${admin-control-cdi-components-prefix}ConfigController.idpRolloverFingerprint}"
+								size="50" />
+						</h:panelGrid>
+						<p:commandButton value="Save"
+							action="#{${admin-control-cdi-components-prefix}ConfigController.save}" ajax="false" />
+					</h:form>
+				</h:panelGrid>
+			</p:tab>
+		</p:tabView>
 	</ui:define>
 </ui:composition>
