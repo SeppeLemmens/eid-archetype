@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.ejb.EJB;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -35,9 +34,7 @@ public class AdminAuthenticationController {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		if (false == this.administratorManager.hasAdminRights(this.authCert,
 				this.identity)) {
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, "Login incorrect.", null));
-			return null;
+			return "/denied.xhtml?faces-redirect=true";
 		}
 		ExternalContext externalContext = facesContext.getExternalContext();
 		Map<String, Object> sessionMap = externalContext.getSessionMap();
