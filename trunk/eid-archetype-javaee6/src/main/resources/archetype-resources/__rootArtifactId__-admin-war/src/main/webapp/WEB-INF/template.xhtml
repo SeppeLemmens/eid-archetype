@@ -29,15 +29,17 @@
 				<h:form>
 					<p:menu>
 						<p:menuitem value="Configuration"
-							action="/admin/configuration.xhtml" />
-						<p:menuitem value="Privileges" action="/admin/privileges.xhtml" />
+							action="/admin/configuration.xhtml" ajax="false" />
+						<p:menuitem value="Privileges" action="/admin/privileges.xhtml"
+							ajax="false" />
 					</p:menu>
 				</h:form>
 			</div>
 		</div>
 
 		<div id="login">
-			<h:form rendered="#{${admin-control-cdi-components-prefix}AuthenticationController.loggedIn}">
+			<h:form
+				rendered="#{${admin-control-cdi-components-prefix}AuthenticationController.loggedIn}">
 				<div id="loginPanel">
 					<h:panelGrid columns="1">
 						<h:outputText
