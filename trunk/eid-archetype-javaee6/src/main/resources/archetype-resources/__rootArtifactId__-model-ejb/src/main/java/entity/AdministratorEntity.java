@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = Constants.DATABASE_TABLE_PREFIX + "admin")
 @NamedQueries({
-		@NamedQuery(name = AdministratorEntity.COUNT_ALL_ACTIVE, query = "SELECT COUNT(*) FROM AdministratorEntity WHERE pending = false"),
+		@NamedQuery(name = AdministratorEntity.COUNT_ALL_ACTIVE, query = "SELECT COUNT(ae) FROM AdministratorEntity AS ae WHERE ae.pending = false"),
 		@NamedQuery(name = AdministratorEntity.ALL, query = "SELECT admin FROM AdministratorEntity AS admin") })
 public class AdministratorEntity implements Serializable {
 
