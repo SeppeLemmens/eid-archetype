@@ -16,13 +16,13 @@ import be.fedict.eid.applet.service.Identity;
 import be.fedict.eid.applet.service.cdi.BelgianCertificate;
 import be.fedict.eid.applet.service.cdi.BelgianCertificate.CERTIFICATE_TYPE;
 
-import ${package}.model.AdministratorManager;
+import ${package}.model.AdministratorManagerBean;
 
 @Named(Constants.CDI_PREFIX + "AuthenticationController")
 public class AdminAuthenticationController {
 
 	@EJB
-	private AdministratorManager administratorManager;
+	private AdministratorManagerBean administratorManager;
 
 	@Inject
 	private Identity identity;
