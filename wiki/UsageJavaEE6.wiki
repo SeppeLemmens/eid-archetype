@@ -94,7 +94,7 @@ Now you can navigate to:
 
   * https://localhost/eid-example-admin/
 
-= !GlassFish 3.1.1 =
+= !GlassFish 3.1.2 =
 
 While creating the application using the Maven eID Archetype, you have to select a different value for `data-source`.
 {{{
@@ -106,6 +106,11 @@ Start the default domain of !GlassFish via:
 ./asadmin
 asadmin> list-domains
 asadmin> start-domain domain1
+}}}
+
+Start the default database via:
+{{{
+asadmin> start-database
 }}}
 
 Copy the EAR file to the !GlassFish autodeploy directory:
