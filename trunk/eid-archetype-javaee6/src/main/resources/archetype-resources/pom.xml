@@ -188,6 +188,7 @@
 			<properties>
 				<environment>development</environment>
 				<hibernate.hbm2ddl.auto>create-drop</hibernate.hbm2ddl.auto>
+				<eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
 			</properties>
 		</profile>
 
@@ -196,6 +197,7 @@
 			<properties>
 				<environment>production</environment>
 				<hibernate.hbm2ddl.auto>validate</hibernate.hbm2ddl.auto>
+				<eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
 			</properties>
 		</profile>
 	</profiles>
