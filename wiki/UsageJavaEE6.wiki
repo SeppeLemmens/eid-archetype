@@ -9,8 +9,7 @@ The following technology stack is being using:
   * EJB 3.1
   * JSF 2.0
   * JPA 2.0
-  * !RichFaces 4.1
-  * Seam 3.1
+  * !PrimeFaces 3.3.1
 
 = Requirements =
 
@@ -19,8 +18,8 @@ The following technology stack is being using:
   * Working smart card reader
   * a Belgian eID card
   * a Java EE 6 application server like:
-    * JBoss AS 7.1.0.Final (Web Profile is sufficient) together with Apache HTTPD Server
-    * Oracle !GlassFish 3.1.1
+    * JBoss AS 7.1.1.Final (Web Profile is sufficient) together with Apache HTTPD Server
+    * Oracle !GlassFish 3.1.2
 
 = Status =
 
@@ -41,7 +40,7 @@ mvn clean install
 }}}
 
 
-= JBoss AS 7.1.0.Final =
+= JBoss AS 7.1.1.Final =
 
 Add to `socket-binding-group` of `standalone/configuration/standalone.xml`
 {{{
@@ -116,6 +115,11 @@ asadmin> start-database
 Copy the EAR file to the !GlassFish autodeploy directory:
 {{{
 cp the-ear-file.ear glassfish/domains/domain1/autodeploy/
+}}}
+
+Or deploy via the console:
+{{{
+asadmin> deploy /path/to/the-ear-file.ear
 }}}
 
 Now you can navigate to:
