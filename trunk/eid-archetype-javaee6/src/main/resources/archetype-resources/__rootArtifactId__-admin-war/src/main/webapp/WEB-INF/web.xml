@@ -46,4 +46,9 @@
 		<welcome-file>index.jsf</welcome-file>
 	</welcome-file-list>
 
+	<error-page>
+		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+		<location>/index.jsf</location>
+	</error-page>
+
 </web-app>
