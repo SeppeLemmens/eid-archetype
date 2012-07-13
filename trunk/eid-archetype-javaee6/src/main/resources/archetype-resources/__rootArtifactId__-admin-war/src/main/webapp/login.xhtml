@@ -6,7 +6,8 @@
 	template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Login</ui:define>
 	<ui:define name="body">
-		<p>Login using your eID card.</p>
+		<p>Login using your eID card. If you are not yet known as
+			administrator, you will be registered for admin approval.</p>
 		<script type="text/javascript" src="./deployJava.js"></script>
 		<script type="text/javascript" src="./deploy-eid-applet.js"></script>
 		<script type="text/javascript">
@@ -30,7 +31,8 @@
 		</script>
 		<h:form id="loginForm">
 			<h:commandButton style="display:none" id="submit"
-				action="#{${admin-control-cdi-components-prefix}AuthenticationController.login}" value="Login" />
+				action="#{${admin-control-cdi-components-prefix}AuthenticationController.login}"
+				value="Login" />
 		</h:form>
 	</ui:define>
 </ui:composition>
