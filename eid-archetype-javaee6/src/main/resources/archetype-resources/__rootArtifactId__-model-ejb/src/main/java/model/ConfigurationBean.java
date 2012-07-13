@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 import ${package}.entity.ConfigurationEntity;
 
 @Stateless
-public class ConfigurationBean implements Configuration {
+public class ConfigurationBean {
 
 	@PersistenceContext
 	private EntityManager entityManager;

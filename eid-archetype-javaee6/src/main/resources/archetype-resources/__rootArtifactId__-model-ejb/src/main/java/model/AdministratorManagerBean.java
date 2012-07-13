@@ -14,7 +14,7 @@ import be.fedict.eid.applet.service.Identity;
 import ${package}.entity.AdministratorEntity;
 
 @Stateless
-public class AdministratorManagerBean implements AdministratorManager {
+public class AdministratorManagerBean {
 
 	@PersistenceContext
 	private EntityManager entityManager;

@@ -20,7 +20,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import ${package}.entity.AdministratorEntity;
-import ${package}.model.AdministratorManager;
+import ${package}.model.AdministratorManagerBean;
 
 @Named(Constants.CDI_PREFIX + "PrivilegesController")
 @ConversationScoped
@@ -32,7 +32,7 @@ public class PrivilegesController implements Serializable {
 			.getLog(PrivilegesController.class);
 
 	@EJB
-	private AdministratorManager administratorManager;
+	private AdministratorManagerBean administratorManager;
 
 	private AdministratorEntity removeCandidate;
 

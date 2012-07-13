@@ -7,7 +7,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import ${package}.model.Configuration;
+import ${package}.model.ConfigurationBean;
 import ${package}.model.ConfigurationProperty;
 
 @Named(Constants.CDI_PREFIX + "ConfigController")
@@ -23,7 +23,7 @@ public class ConfigurationController {
 	private String idpRolloverFingerprint;
 
 	@EJB
-	private Configuration configuration;
+	private ConfigurationBean configuration;
 	
 	@PostConstruct
 	public void postConstruct() {
