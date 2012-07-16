@@ -8,7 +8,10 @@
 		<jta-data-source>${data-source}</jta-data-source>
 
 		<properties>
+			<!-- JBoss AS 7.1 -->
 			<property name="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}" />
+			
+			<!-- GlassFish 3.1.2 -->
 			<property name="eclipselink.ddl-generation" value="${eclipselink.ddl-generation}" />
 		</properties>
 	</persistence-unit>
