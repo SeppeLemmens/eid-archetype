@@ -24,6 +24,7 @@
 		<requiredProperty key="data-source">
 			<defaultValue>java:jboss/datasources/ExampleDS</defaultValue>
 			<!-- for GlassFish 3.1.1 this is: jdbc/__default -->
+			<!-- for Geronimo 3.0.0 we take: DefaultDS -->
 		</requiredProperty>
 		<requiredProperty key="css-color">
 			<defaultValue>#FF9000</defaultValue>
@@ -39,10 +40,6 @@
 		</requiredProperty>
 		<requiredProperty key="jpa-named-query-prefix">
 			<defaultValue>eid.example</defaultValue>
-		</requiredProperty>
-		<requiredProperty key="application-server">
-			<defaultValue>jboss-as</defaultValue>
-			<!-- for GlassFish 3.1.1 this is: glassfish -->
 		</requiredProperty>
 	</requiredProperties>
 
