@@ -28,6 +28,11 @@
 							<artifactId>${rootArtifactId}-admin-war</artifactId>
 							<contextRoot>/${context-root}-admin</contextRoot>
 						</webModule>
+						<webModule>
+							<groupId>${groupId}</groupId>
+							<artifactId>${rootArtifactId}-war</artifactId>
+							<contextRoot>/${context-root}</contextRoot>
+						</webModule>
 					</modules>
 				</configuration>
 			</plugin>
@@ -57,6 +62,13 @@
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-admin-war</artifactId>
+			<version>${version}</version>
+			<type>war</type>
+			<classifier>${environment}</classifier>
+		</dependency>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-war</artifactId>
 			<version>${version}</version>
 			<type>war</type>
 			<classifier>${environment}</classifier>

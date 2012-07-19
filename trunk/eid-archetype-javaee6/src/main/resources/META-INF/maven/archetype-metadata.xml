@@ -35,6 +35,9 @@
 		<requiredProperty key="admin-control-cdi-components-prefix">
 			<defaultValue>exampleAdmin</defaultValue>
 		</requiredProperty>
+		<requiredProperty key="control-cdi-components-prefix">
+			<defaultValue>example</defaultValue>
+		</requiredProperty>
 		<requiredProperty key="table-prefix">
 			<defaultValue>example_</defaultValue>
 		</requiredProperty>
@@ -63,6 +66,26 @@
 		</module>
 		<module id="${rootArtifactId}-admin-war" name="${rootArtifactId}-admin-war"
 			dir="__rootArtifactId__-admin-war">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.xhtml</include>
+						<include>**/*.jsf</include>
+						<include>**/*.xml</include>
+						<include>**/*.css</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-war" name="${rootArtifactId}-war"
+			dir="__rootArtifactId__-war">
 			<fileSets>
 				<fileSet filtered="true" encoding="UTF-8">
 					<directory>src/main/webapp</directory>
