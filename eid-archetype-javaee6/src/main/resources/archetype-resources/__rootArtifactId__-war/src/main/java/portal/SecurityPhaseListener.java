@@ -44,7 +44,7 @@ public class SecurityPhaseListener implements PhaseListener {
 			} else {
 				Set<String> userRoles = (Set<String>) sessionMap
 						.get("UserRoles");
-				if (false == hasRole("admin", userRoles)) {
+				if (false == hasRole("user", userRoles)) {
 					if (false == redirect(facesContext, "/denied.xhtml")) {
 						throw new SecurityException("access denied");
 					}
