@@ -31,6 +31,27 @@
 		<servlet-name>AuthenticationRequestServlet</servlet-name>
 		<url-pattern>/eid-idp-request</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AuthenticationResponseServlet</servlet-name>
+		<servlet-class>be.fedict.eid.idp.sp.protocol.saml2.post.AuthenticationResponseServlet</servlet-class>
+		<init-param>
+			<param-name>ResponseSessionAttribute</param-name>
+			<param-value>AuthenticationResponse</param-value>
+		</init-param>
+		<init-param>
+			<param-name>RedirectPage</param-name>
+			<param-value>/login</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AuthenticationResponseService</param-name>
+			<param-value>java:module/AuthenticationResponseServiceBean</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthenticationResponseServlet</servlet-name>
+		<url-pattern>/eid-idp-response</url-pattern>
+	</servlet-mapping>
 
 	<session-config>
 		<session-timeout>10</session-timeout>
