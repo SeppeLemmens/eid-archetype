@@ -52,6 +52,15 @@
 		<servlet-name>AuthenticationResponseServlet</servlet-name>
 		<url-pattern>/eid-idp-response</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>be.fedict.eid.example.portal.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
 
 	<session-config>
 		<session-timeout>10</session-timeout>
