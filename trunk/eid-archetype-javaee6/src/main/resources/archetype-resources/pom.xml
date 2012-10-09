@@ -209,8 +209,8 @@
 	</pluginRepositories>
 
 	<properties>
-		<eid-applet.version>1.0.5-SNAPSHOT</eid-applet.version>
-		<eid-idp.version>1.0.1.Beta7</eid-idp.version>
+		<eid-applet.version>1.0.5.GA</eid-applet.version>
+		<eid-idp.version>1.0.1.RC2</eid-idp.version>
 	</properties>
 
 	<profiles>
