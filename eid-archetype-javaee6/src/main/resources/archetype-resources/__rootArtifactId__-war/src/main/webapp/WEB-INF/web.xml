@@ -55,7 +55,7 @@
 	
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>be.fedict.eid.example.portal.LoginServlet</servlet-class>
+		<servlet-class>${package}.portal.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
