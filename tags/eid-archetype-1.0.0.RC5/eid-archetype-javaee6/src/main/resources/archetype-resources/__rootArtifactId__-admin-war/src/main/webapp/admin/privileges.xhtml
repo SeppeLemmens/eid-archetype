@@ -1,0 +1,68 @@
+#set( $symbol_pound = '#' )
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/WEB-INF/template.xhtml">
+	<ui:define name="title">Privileges</ui:define>
+	<ui:define name="body">
+		<p>Configure the administrator privileges via this page.</p>
+		<h:form id="mainForm">
+			<p:dataTable var="row"
+				value="#{${admin-control-cdi-components-prefix}AdminList}" rows="10"
+				paginator="true" id="adminList">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Name" />
+					</f:facet>
+					<h:outputText value="#{row.name}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Card Number" />
+					</f:facet>
+					<h:outputText value="#{row.cardNumber}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Pending" />
+					</f:facet>
+					<h:outputText value="#{row.pending}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Actions" />
+					</f:facet>
+					<h:panelGroup>
+						<p:commandLink styleClass="ui-icon ui-icon-trash"
+							actionListener="#{${admin-control-cdi-components-prefix}PrivilegesController.removeCandidate}"
+							oncomplete="removeDialog.show()"
+							update=":confirmForm:confirmButton">
+							<f:attribute name="selectedAdmin" value="${symbol_pound}{row}" />
+						</p:commandLink>
+						<h:commandLink styleClass="ui-icon ui-icon-check"
+							action="#{${admin-control-cdi-components-prefix}PrivilegesController.approve(row)}"
+							rendered="#{row.pending}" />
+					</h:panelGroup>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		<p:confirmDialog header="Remove Admin"
+			message="Are you sure to remove the admin?" severity="alert"
+			widgetVar="removeDialog">
+			<h:form id="confirmForm">
+				<p:commandButton id="confirmButton" value="Yes"
+					actionListener="#{${admin-control-cdi-components-prefix}PrivilegesController.removeAdmin}"
+					oncomplete="removeDialog.hide()"
+					update=":mainForm:adminList,:messages">
+					<f:param name="cid"
+						value="#{javax.enterprise.context.conversation.id}" />
+				</p:commandButton>
+				<p:commandButton value="No" onclick="removeDialog.hide()" />
+			</h:form>
+		</p:confirmDialog>
+	</ui:define>
+</ui:composition>
