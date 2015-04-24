@@ -1,0 +1,3 @@
+The eID Maven Archetype Project provides Maven archetypes to ease the creation of eID enabled web applications.
+
+Make yourself member of the [eID Applet group](http://groups.google.com/group/eid-applet) for free support and staying up to date with the eID products. Given the constant security threats in the world of web applications, the security features of the eID products are ever evolving. Every day we invest effort in keeping the eID products as safe as possible by applying innovative security concepts. Via the eID Applet group we also keep you informed about eID product security updates.
